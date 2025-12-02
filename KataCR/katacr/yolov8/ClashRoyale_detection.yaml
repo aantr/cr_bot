@@ -12,6 +12,7 @@ names:
   1: queen-tower
   2: cannoneer-tower
   3: dagger-duchess-tower
+  9: clock
   10: emote
   14: skeleton-king-bar
   15: skeleton
@@ -148,7 +149,6 @@ names:
   151: skeleton-king-skill
   154: zap-evolution
   155: skeleton-army
-  156: clock
   157: royal-chef-tower
   158: musketeer-evolution
   159: goblin-barrel-evolution
