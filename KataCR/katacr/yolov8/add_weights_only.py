@@ -11,7 +11,8 @@ def replace_torch_load_in_files(paths):
         file_pattern: шаблон поиска файлов (по умолчанию '*.py')
         directory: директория для поиска
     """
-    pattern = r'torch\.load\(([^)]+)\)'
+    pattern = r'torch\.load\((?!.*weights_only)([^)]*)\)'
+
     replacement = r'torch.load(\1, weights_only=False)'
     
     files_changed = 0
