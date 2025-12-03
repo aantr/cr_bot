@@ -1176,7 +1176,7 @@ if __name__ == "__main__":
         # print(generator.map_cfg['ground'])
         generator.reset()
     with open(path_generation / 'yolo_annotations.txt', 'w') as f:
-        f.write('\n'.join([f'./{images[i]} ./{annotations[i]}' for i in range(len(images))]))
+        f.write('\n'.join([f'./{images[i]}' for i in range(len(images))]))
     # generator = Generator(background_index=None, seed=42, intersect_ratio_thre=0.6)
     # generator.add_tower()
     # generator.add_unit(n=80)

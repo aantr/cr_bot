@@ -69,7 +69,7 @@ class YOLOFilterYAML:
             # assert all([v in self.allowed_classes for k, v in self.class_id_to_name.items()])
             print ([v for k, v in self.class_id_to_name.items() if v not in self.allowed_classes])
             print(f"Загружено {len(self.classes)} классов из YAML")
-            print(f"Классы: {', '.join(self.allowed_classes)}")
+            print(f"Классы: {', '.join(map(str, self.allowed_classes))}")
             
             # Выводим информацию о датасете
             if 'path' in self.dataset_info:

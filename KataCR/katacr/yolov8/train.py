@@ -54,15 +54,15 @@ def parse_args():
 
 if __name__ == '__main__':
   import ultralytics
+  import torch.serialization
+  import _codecs
+  import numpy as np
   args = parse_args()
   torch.serialization.add_safe_globals([CRDetectionModel])
   torch.serialization.add_safe_globals([ultralytics.nn.tasks.DetectionModel])
   torch.serialization.add_safe_globals([torch.nn.modules.container.Sequential])
   torch.serialization.add_safe_globals([ultralytics.nn.modules.Conv])
-  import torch.serialization
-  import _codecs
-  import numpy as np
-  
+
   torch.serialization.add_safe_globals([np.core.multiarray.scalar, np.dtype, np.dtypes.Float64DType, _codecs.encode])
   model = YOLO_CR("yolov8l.yaml", task='detect')
   cfg = dict(get_cfg(Path(__file__).parent / 'ClashRoyale.yaml'))

@@ -1,10 +1,8 @@
-# path: /home/yy/Coding/datasets/Clash-Royale-Dataset/images/part2
 path: /Users/sasha/cr_bot/KataCR/logs/generation
-# train: train_annotation.txt
-# val: val_annotation.txt
+
 train: null
-val: yolo_annotation.txt
-# test: null
+val: yolo_annotations.txt
+test: null
 
 # from katacr dataset + some
 names:
@@ -12,8 +10,17 @@ names:
   1: queen-tower
   2: cannoneer-tower
   3: dagger-duchess-tower
+  4: 
+  5: 
+  6: 
+  7: 
+  8: 
   9: clock
   10: emote
+  11: 
+  12: 
+  13: 
+  14: 
   15: skeleton
   16: skeleton-evolution
   17: electro-spirit
@@ -58,6 +65,7 @@ names:
   56: clone
   57: tornado
   58: miner
+  59: 
   60: princess
   61: ice-wizard
   62: royal-ghost
@@ -76,6 +84,7 @@ names:
   75: battle-ram
   76: battle-ram-evolution
   77: bomb-tower
+  78: 
   79: flying-machine
   80: hog-rider
   81: battle-healer
@@ -113,6 +122,7 @@ names:
   113: electro-dragon
   114: bowler
   115: executioner
+  116: 
   117: cannon-cart
   118: ram-rider
   119: graveyard
@@ -143,11 +153,16 @@ names:
   144: valkyrie-evolution
   145: bomber-evolution
   146: wall-breaker-evolution
+  147: 
   148: mirror
   149: tesla-evolution
+  150: 
   151: skeleton-king-skill
+  152: 
+  153: 
   154: zap-evolution
   155: skeleton-army
+  156: 
   157: royal-chef-tower
   158: musketeer-evolution
   159: goblin-barrel-evolution
