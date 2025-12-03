@@ -1,4 +1,5 @@
-import ultralytics.nn.tasks as file
+import ultralytics.nn.tasks as tasks
+import ultralytics.utils.torch_utils as torch_utils
 import re
 import os
 import glob
@@ -34,7 +35,7 @@ def replace_torch_load_in_files(paths):
     
     print(f"\nИтого изменено файлов: {files_changed}")
 
-paths = [file.__file__]
+paths = [tasks.__file__, torch_utils.__file__]
 
 print(paths)
 
