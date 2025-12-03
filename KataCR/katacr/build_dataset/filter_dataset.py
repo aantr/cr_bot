@@ -67,17 +67,17 @@ class YOLOFilterYAML:
             self.class_id_to_name = {idx: name for name, idx in self.class_name_to_id.items()}
             assert all([type(k) == int for k, v in self.class_id_to_name.items()])
             # assert all([v in self.allowed_classes for k, v in self.class_id_to_name.items()])
-            print ([v for k, v in self.class_id_to_name.items() if v not in self.allowed_classes])
-            print(f"Загружено {len(self.classes)} классов из YAML")
-            print(f"Классы: {', '.join(map(str, self.allowed_classes))}")
+            # print ([v for k, v in self.class_id_to_name.items() if v not in self.allowed_classes])
+            # print(f"Загружено {len(self.classes)} классов из YAML")
+            # print(f"Классы: {', '.join(map(str, self.allowed_classes))}")
             
-            # Выводим информацию о датасете
-            if 'path' in self.dataset_info:
-                print(f"Путь датасета: {self.dataset_info['path']}")
-            if 'train' in self.dataset_info:
-                print(f"Train images: {self.dataset_info['train']}")
-            if 'val' in self.dataset_info:
-                print(f"Val images: {self.dataset_info['val']}")
+            # # Выводим информацию о датасете
+            # if 'path' in self.dataset_info:
+            #     print(f"Путь датасета: {self.dataset_info['path']}")
+            # if 'train' in self.dataset_info:
+            #     print(f"Train images: {self.dataset_info['train']}")
+            # if 'val' in self.dataset_info:
+            #     print(f"Val images: {self.dataset_info['val']}")
             
             return self.dataset_info
             
