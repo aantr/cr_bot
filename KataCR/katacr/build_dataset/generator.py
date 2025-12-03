@@ -1149,16 +1149,21 @@ if __name__ == "__main__":
     )
     path_generation = path_logs / "generation"
     path_generation.mkdir(exist_ok=True)
+    images = []
+    annotations = []
     for i in range(100):
         # generator = Generator(background_index=None, seed=42+i, intersect_ratio_thre=0.9)
+        images.append(f"gen_{i + 1}.jpg")
+        annotations.append(f"gen_{i + 1}.txt")
         generator.add_tower()
         generator.add_unit(n=random.randint(10, 40))
         x, box, _ = generator.build(
             verbose=False,
             show_box=False,
-            save_path=str(path_generation / f"gen_{i + 1}.jpg"),
+            save_path=str(path_generation / images[-1]),
             generate_ann=True
         )
+
         # for b in box:
         #   assert idx2unit[b[5]] != 'skeleton-king-skill'
         # x, box, _ = generator.build(verbose=True, show_box=False, save_path=str(path_generation / f"test{0+2*i}.jpg"))
@@ -1170,6 +1175,8 @@ if __name__ == "__main__":
         # print(ret)
         # print(generator.map_cfg['ground'])
         generator.reset()
+    with open(path_generation / 'yolo_annotations.txt', 'w') as f:
+        f.write('\n'.join([f'./{images[i]} ./{annotations[i]}' for i in range(len(images))]))
     # generator = Generator(background_index=None, seed=42, intersect_ratio_thre=0.6)
     # generator.add_tower()
     # generator.add_unit(n=80)

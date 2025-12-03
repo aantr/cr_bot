@@ -1,5 +1,5 @@
 # path: /home/yy/Coding/datasets/Clash-Royale-Dataset/images/part2
-path: /data/user/wutianyang/dataset/Clash-Royale-Dataset/images/part2
+path: /Users/sasha/cr_bot/KataCR/logs/generation
 # train: train_annotation.txt
 # val: val_annotation.txt
 train: null
@@ -14,7 +14,6 @@ names:
   3: dagger-duchess-tower
   9: clock
   10: emote
-  14: skeleton-king-bar
   15: skeleton
   16: skeleton-evolution
   17: electro-spirit

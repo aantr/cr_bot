@@ -1,12 +1,12 @@
 import math
 from ultralytics import YOLO
 import yaml
-
 model = YOLO('yolov8n.pt')
 
-# results = model.train(
-#     data='dataset.yaml
-# )
+results = model.train(
+    data='KataCR/logs/generation/ClashRoyale_detection.yaml'
+)
+
 
 from ultralytics import YOLO
 import cv2

@@ -1,13 +1,12 @@
 {
-  "dataset_dir": "/Users/sasha/cr_bot/KataCR/Clash-Royale-Detection-Dataset/images/part2",
-  "yaml_file": "/Users/sasha/cr_bot/KataCR/Clash-Royale-Detection-Dataset/images/part2/ClashRoyale_detection.yaml",
+  "dataset_dir": "KataCR/Clash-Royale-Detection-Dataset/images/part2",
+  "yaml_file": "KataCR/Clash-Royale-Detection-Dataset/images/part2/ClashRoyale_detection.yaml",
   "allowed_classes": [
     "king-tower",
     "queen-tower",
     "cannoneer-tower",
     "dagger-duchess-tower",
     "emote",
-    "skeleton-king-bar",
     "skeleton",
     "skeleton-evolution",
     "electro-spirit",
@@ -182,11 +181,11 @@
   "stats": {
     "total_pairs": 6966,
     "processed_pairs": 6966,
-    "modified_files": 6939,
-    "total_annotations": 117294,
-    "kept_annotations": 75575,
-    "removed_annotations": 41719,
+    "modified_files": 46,
+    "total_annotations": 75575,
+    "kept_annotations": 75529,
+    "removed_annotations": 46,
     "errors": 0
   },
-  "timestamp": "2025-12-03T02:05:06.454553"
+  "timestamp": "2025-12-03T18:49:21.581596"
 }

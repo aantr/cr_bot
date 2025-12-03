@@ -3,7 +3,6 @@ queen-tower
 cannoneer-tower
 dagger-duchess-tower
 emote
-skeleton-king-bar
 skeleton
 skeleton-evolution
 electro-spirit
