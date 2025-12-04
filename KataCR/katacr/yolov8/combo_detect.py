@@ -1,3 +1,5 @@
+import math
+from ultralytics import YOLO
 from train import YOLO_CR
 from predict import ImageAndVideoLoader
 from pathlib import Path
@@ -21,10 +23,10 @@ path_detectors = [
   # path_root / './runs/detector1_v0.7.6.pt',
   # path_root / './runs/detector2_v0.7.6.pt',
   # path_root / './runs/detector3_v0.7.6.pt',
-  # path_root / './runs/detector1_v0.7.8.pt',
-  # path_root / './runs/detector2_v0.7.8.pt',
-  path_root / './runs/detector1_v0.7.13.pt',
-  path_root / './runs/detector2_v0.7.13.pt',
+  # path_root / './runs/detector1_v0.7.13.pt',
+  # path_root / './runs/detector2_v0.7.13.pt',
+  path_root / './runs/best.pt',
+
 ]
 
 class ComboDetector:
@@ -57,6 +59,9 @@ class ComboDetector:
     for p in results:
       boxes = p.orig_boxes.clone()
       for i in range(len(boxes)):
+        if p.names[int(boxes[i, 5])] not in unit2idx:
+          print('Warning: ', p.names[int(boxes[i, 5])], 'not in units')
+          continue
         boxes[i, 5] = unit2idx[p.names[int(boxes[i, 5])]]
         preds.append(boxes[i])
     if not preds:
@@ -126,7 +131,38 @@ class ComboDetector:
 
 
 if __name__ == '__main__':
+  path_source = "/Users/sasha/cr_bot/KataCR/logs/generation/gen_2.jpg"
+  model = YOLO(path_detectors[0])
+  model.save('model')
+
+  results = model(source=path_source)
+  print(list(results[0].boxes))
+  # Визуализация результатов
+  field = [[None for _ in range(8)] for _ in range(8)]
+  for r in results:
+      im_array = r.plot()  # изображение с bounding boxes
+      centers = []
+      if len(r.boxes.data) == 0:
+        continue
+      mn = mx = [r.boxes.data[0][0], r.boxes.data[0][1]]
+      mn = mx.copy()
+      for i in r.boxes.data:
+          mn[0] = min(mn[0], i[0])
+          mn[1] = min(mn[1], i[1])
+          mx[0] = max(mx[0], i[2])
+          mx[1] = max(mx[1], i[3])
+      for i in r.boxes.data:
+          centers.append([float((i[0] + i[2]) / 2 - mn[0]) / (mx[0] - mn[0]), float((i[1] + i[3]) / 2 - mn[1]) / (mx[1] - mn[1])])
+          for j in range(2):
+              centers[-1][j] = math.floor(centers[-1][j] * 8)
+          if (field[centers[-1][1]][centers[-1][0]] is None):
+              field[centers[-1][1]][centers[-1][0]] = int(i[5])
+      
+      # print(centers, r.boxes.cls, r.orig_shape)
+      cv2.imwrite('result.png', im_array)
+
   combo = ComboDetector(path_detectors, show_conf=True, conf=0.9, iou_thre=0.9, tracker='bytetrack')
+
   # combo = ComboDetector(path_detectors, show_conf=True, conf=0.7, iou_thre=0.6, tracker=None)
   # combo.predict("/home/yy/Coding/datasets/Clash-Royale-Dataset/videos/fast_pig_2.6/OYASSU_20210528_episodes/1.mp4", show=True, save=True, video_interval=6)
   # combo.predict("/home/yy/Coding/datasets/Clash-Royale-Dataset/videos/fast_pig_2.6/OYASSU_20230203_episodes/2.mp4", show=True, save=True, video_interval=3)
@@ -140,5 +176,5 @@ if __name__ == '__main__':
   # combo.predict("/home/yy/Coding/datasets/Clash-Royale-Dataset/videos/fast_pig_2.6/lan77_20240406_episodes/2.mp4", show=True, save=False, video_interval=3)
   # combo.predict("/home/yy/Videos/CR_Videos/test/lan77_20240406_ep_2_sub_sub.mp4", show=True, save=True, video_interval=3)
   # combo.predict("/home/yy/Videos/CR_Videos/test/test_feature_build2_sub_end.mp4", show=True, save=True, video_interval=3)
-  combo.predict("screenshot/IMG_0694.MP4", show=True, save=True, video_interval=1)
+  combo.predict(path_source, show=True, save=True, video_interval=1)
   # combo.predict("/home/yy/Videos/CR_Videos/musketeer_and_hogrider_insecond.mp4", show=True, save=True, video_interval=3)

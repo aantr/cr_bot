@@ -321,6 +321,7 @@ ground_unit_list = [
     "wall-breaker-evolution",
     "witch",
     "wizard",
+    "wizard-evolution",
     "the-log",
     "x-bow",
     "zappy",
