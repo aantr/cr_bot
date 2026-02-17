@@ -23,16 +23,9 @@ path_detectors = [
   # path_root / './runs/detector1_v0.7.6.pt',
   # path_root / './runs/detector2_v0.7.6.pt',
   # path_root / './runs/detector3_v0.7.6.pt',
-<<<<<<< HEAD
   path_root / './runs/detector1_v0.7.13.pt',
   path_root / './runs/detector2_v0.7.13.pt',
   # path_root / './runs/best.pt',
-=======
-  # path_root / './runs/detector1_v0.7.13.pt',
-  # path_root / './runs/detector2_v0.7.13.pt',
-  path_root / './runs/best.pt',
-
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
 ]
 
 class ComboDetector:
@@ -137,11 +130,7 @@ class ComboDetector:
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
   path_source = "/Users/sasha/cr_bot/screenshot/Canon-Gold.MP4"
-=======
-  path_source = "/Users/sasha/cr_bot/KataCR/logs/generation/gen_2.jpg"
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
   model = YOLO(path_detectors[0])
   model.save('model')
 
