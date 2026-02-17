@@ -1,0 +1,4 @@
+data/obj_train_data/frame_000026.png
+data/obj_train_data/frame_000038.png
+data/obj_train_data/frame_000109.png
+data/obj_train_data/frame_000112.png

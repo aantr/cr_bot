@@ -1,0 +1,200 @@
+path: /Users/sasha/cr_bot/KataCR/logs/generation
+
+train: null
+val: yolo_annotations.txt
+test: null
+
+# from katacr dataset + some
+names:
+  0: king-tower
+  1: queen-tower
+  2: cannoneer-tower
+  3: dagger-duchess-tower
+  4: 
+  5: 
+  6: 
+  7: 
+  8: 
+  9: clock
+  10: emote
+  11: 
+  12: 
+  13: 
+  14: 
+  15: skeleton
+  16: skeleton-evolution
+  17: electro-spirit
+  18: fire-spirit
+  19: ice-spirit
+  20: heal-spirit
+  21: goblin
+  22: spear-goblin
+  23: bomber
+  24: bat
+  25: bat-evolution
+  26: zap
+  27: giant-snowball
+  28: ice-golem
+  29: barbarian-barrel
+  30: barbarian
+  31: barbarian-evolution
+  32: wall-breaker
+  33: rage
+  34: the-log
+  35: archer
+  36: arrows
+  37: knight
+  38: knight-evolution
+  39: minion
+  40: cannon
+  41: skeleton-barrel
+  42: firecracker
+  43: firecracker-evolution
+  44: royal-delivery
+  45: royal-recruit
+  46: royal-recruit-evolution
+  47: tombstone
+  48: mega-minion
+  49: dart-goblin
+  50: earthquake
+  51: elixir-golem-big
+  52: elixir-golem-mid
+  53: elixir-golem-small
+  54: goblin-barrel
+  55: guard
+  56: clone
+  57: tornado
+  58: miner
+  59: 
+  60: princess
+  61: ice-wizard
+  62: royal-ghost
+  63: bandit
+  64: fisherman
+  65: skeleton-dragon
+  66: mortar
+  67: mortar-evolution
+  68: tesla
+  69: fireball
+  70: mini-pekka
+  71: musketeer
+  72: goblin-cage
+  73: goblin-brawler
+  74: valkyrie
+  75: battle-ram
+  76: battle-ram-evolution
+  77: bomb-tower
+  78: 
+  79: flying-machine
+  80: hog-rider
+  81: battle-healer
+  82: furnace
+  83: zappy
+  84: baby-dragon
+  85: dark-prince
+  86: freeze
+  87: poison
+  88: hunter
+  89: goblin-drill
+  90: electro-wizard
+  91: inferno-dragon
+  92: phoenix-big
+  93: phoenix-egg
+  94: phoenix-small
+  95: magic-archer
+  96: lumberjack
+  97: night-witch
+  98: mother-witch
+  99: hog
+  100: golden-knight
+  101: skeleton-king
+  102: mighty-miner
+  103: rascal-boy
+  104: rascal-girl
+  105: giant
+  106: goblin-hut
+  107: inferno-tower
+  108: wizard
+  109: royal-hog
+  110: witch
+  111: balloon
+  112: prince
+  113: electro-dragon
+  114: bowler
+  115: executioner
+  116: 
+  117: cannon-cart
+  118: ram-rider
+  119: graveyard
+  120: archer-queen
+  121: monk
+  122: royal-giant
+  123: royal-giant-evolution
+  124: elite-barbarian
+  125: rocket
+  126: barbarian-hut
+  127: elixir-collector
+  128: giant-skeleton
+  129: lightning
+  130: goblin-giant
+  131: x-bow
+  132: sparky
+  133: pekka
+  134: electro-giant
+  135: mega-knight
+  136: lava-hound
+  137: lava-pup
+  138: golem
+  139: golemite
+  140: little-prince
+  141: royal-guardian
+  142: archer-evolution
+  143: ice-spirit-evolution
+  144: valkyrie-evolution
+  145: bomber-evolution
+  146: wall-breaker-evolution
+  147: 
+  148: mirror
+  149: tesla-evolution
+  150: 
+  151: skeleton-king-skill
+  152: 
+  153: 
+  154: zap-evolution
+  155: skeleton-army
+  156: 
+  157: royal-chef-tower
+  158: musketeer-evolution
+  159: goblin-barrel-evolution
+  160: cannon-evolution
+  161: royal-hog-evolution
+  162: dart-goblin-evolution
+  163: skeleton-barrel-evolution
+  164: baby-dragon-evolution
+  165: goblin-cage-evolution
+  166: goblin-drill-evolution
+  167: hunter-evolution
+  168: electro-dragon-evolution
+  169: wizard-evolution
+  170: executioner-evolution
+  171: goblin-giant-evolution
+  172: furnace-evolution
+  173: mega-knight-evolution
+  174: witch-evolution
+  175: pekka-evolution
+  176: boss-bandit
+  177: royal-ghost-evolution
+  178: lumberjack-evolution
+  179: vines
+  180: spirit-empress
+  181: goblin-machine
+  182: rune-giant
+  183: inferno-dragon-evolution
+  184: goblinstein
+  185: goblin-curse
+  186: goblin-demolisher
+  187: three-musketeers
+  188: minion-horde
+  189: suspicious-bush
+  190: berserker
+  191: giant-snowball-evolution

@@ -1,0 +1,15 @@
+# KataCR
+.vscode
+KataCR/__pycache__
+KataCR/*old*
+KataCR/test*
+KataCR/_DEBUG
+KataCR/logs
+KataCR/wandb
+KataCR/runs
+KataCR/yolov8n.pt
+KataCR/.VSCodeCounter
+venv
+runs
+my_dataset
+ 
