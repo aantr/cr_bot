@@ -168,10 +168,6 @@ unit_list = [
     "royal-hog-evolution",
     "dart-goblin-evolution",
     "skeleton-barrel-evolution",
-<<<<<<< HEAD
-=======
-    "battle-ram-evolution",
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
     "baby-dragon-evolution",
     "goblin-cage-evolution",
     "zap-evolution",
@@ -203,25 +199,15 @@ unit_list = [
     "berserker",
     "giant-snowball-evolution",
     "skeleton-army",
-<<<<<<< HEAD
     # Added from YAML analysis
     "mirror",
     "tesla-evolution-shock",
 ]
 
-=======
-]
-
-
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
 yaml = YOLOFilterYAML(path_yaml)
 yaml.load_classes_from_yaml()
 idx2unit = yaml.class_id_to_name
 unit2idx = {name: idx for idx, name in idx2unit.items()}
-<<<<<<< HEAD
-=======
-
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
 ground_unit_list = [
     "archer",
     "archer-evolution",
@@ -339,25 +325,17 @@ ground_unit_list = [
     "the-log",
     "x-bow",
     "zappy",
-<<<<<<< HEAD
     "phoenix-egg",
 ]
 
-=======
-]
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
 tower_unit_list = [
     "king-tower",
     "queen-tower",
     "cannoneer-tower",
     "dagger-duchess-tower",
-<<<<<<< HEAD
     "royal-chef-tower",
 ]
 
-=======
-]
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
 flying_unit_list = [
     "arrows",
     "axe",
@@ -381,10 +359,6 @@ flying_unit_list = [
     "tornado",
     "zap",
 ]
-<<<<<<< HEAD
-
-=======
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
 spell_unit_list = [
     "arrows",
     "clone",
@@ -402,11 +376,8 @@ spell_unit_list = [
     "tesla-evolution-shock",
     "tornado",
     "zap",
-<<<<<<< HEAD
     "the-log",
     "royal-delivery",
-=======
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
 ]
 other_unit_list = [
     "bar",
