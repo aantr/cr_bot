@@ -1,8 +1,3 @@
-"""
-2023/11/01: Total unit numbers: 125 + 9 = 134
-2023/11/11: Add little-prince, royal-guradian and archer-evolution, total: 137
-"""
-
 from katacr.build_dataset.filter_dataset import YOLOFilterYAML
 from katacr.build_dataset.constant import path_yaml
 
@@ -199,9 +194,8 @@ unit_list = [
     "berserker",
     "giant-snowball-evolution",
     "skeleton-army",
-    # Added from YAML analysis
     "mirror",
-    "tesla-evolution-shock",
+    "tesla-evolution-shock"
 ]
 
 yaml = YOLOFilterYAML(path_yaml)

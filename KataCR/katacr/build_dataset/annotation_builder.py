@@ -247,8 +247,8 @@ class YOLOAnnotationGenerator:
 
                 if include_states:
                     states = list(map(int, ann["states"]))
-                    while len(states) < 7:
-                        states.append(0)
+                    # while len(states) < 7:
+                    #     states.append(0)
                     line += f" " + " ".join(list(map(str, states)))
 
                 f.write(line + "\n")

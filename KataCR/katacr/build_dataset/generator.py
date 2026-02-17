@@ -645,7 +645,8 @@ class Generator:
                 ] += 1
             if u.cls != -1 and u.cls_name in self.recognize_names:
                 # box.append((*u.xyxy_visiable, *u.states, u.cls))  # xyxy visiable is bad
-                box.append((*u.xyxy, *u.states, u.cls))
+                # box.append((*u.xyxy, *u.states, u.cls))
+                box.append((*u.xyxy, *u.states))
         box = np.array(box, np.float32)
         if img_size is not None:
             img, box = self.resize_and_pad(img, box, img_size)
@@ -668,22 +669,23 @@ class Generator:
             img.show()
         pil_img = img
         if generate_ann:
-          ann_generator = YOLOAnnotationGenerator()
-          annotations = ann_generator.parse_coordinates(
-              box, format_type="yolo_normalized"
-          )
+            ann_generator = YOLOAnnotationGenerator()
+            annotations = ann_generator.parse_coordinates(
+                box, format_type="yolo_normalized"
+            )
 
-          errors = ann_generator.validate_annotations(annotations)
-          if errors:
-              print("Ошибки валидации:")
-              for error in errors:
-                  print(f"  - {error}")
+            errors = ann_generator.validate_annotations(annotations)
+            if errors:
+                print("Ошибки валидации:")
+                for error in errors:
+                    print(f"  - {error}")
 
-          # Создаем файл аннотаций
-          output_file = Path(save_path).with_suffix(".txt")
-          ann_generator.create_yolo_annotation_file(
-              annotations, output_file, include_states=True
-          )
+            # Создаем файл аннотаций
+
+            output_file = Path(save_path).with_suffix(".txt")
+            ann_generator.create_yolo_annotation_file(
+                annotations, output_file, include_states=True
+            )
         return origin_img, box, pil_img
 
     def join(self, unit: Unit):
