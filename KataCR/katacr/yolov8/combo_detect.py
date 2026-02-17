@@ -171,11 +171,7 @@ if __name__ == '__main__':
       # print(centers, r.boxes.cls, r.orig_shape)
       cv2.imwrite('result.png', im_array)
 
-<<<<<<< HEAD
   combo = ComboDetector(path_detectors, show_conf=True, conf=0.2, iou_thre=0.5, tracker='botsort')
-=======
-  combo = ComboDetector(path_detectors, show_conf=True, conf=0.9, iou_thre=0.9, tracker='bytetrack')
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
 
   # combo = ComboDetector(path_detectors, show_conf=True, conf=0.7, iou_thre=0.6, tracker=None)
   # combo.predict("/home/yy/Coding/datasets/Clash-Royale-Dataset/videos/fast_pig_2.6/OYASSU_20210528_episodes/1.mp4", show=True, save=True, video_interval=6)
