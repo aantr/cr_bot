@@ -633,6 +633,12 @@ class Generator:
             if len(self.unit_list) == len(unit_avail):
                 break
         for u in unit_avail[::-1]:  # increase order for drawing
+            # write in .txt about object
+            # write_this_box = False
+            # if u.cls_name in ['bar', 'bar-level']:
+            #     print(u.xyxy, u.cls_name)
+            #     write_this_box = True
+
             u.draw(img)
             cls.add(u.cls)
             if u.cls_name in self.moveable_unit2idx:
