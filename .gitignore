@@ -12,3 +12,4 @@ venv
 runs
 my_dataset
 screenshot
+*.cache
