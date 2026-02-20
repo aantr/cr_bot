@@ -1,0 +1,7 @@
+names:
+  0: bar
+  1: bar-level
+nc: 2
+path: /Users/sasha/cr_bot/yolo_dataset
+train: train/images
+val: val/images

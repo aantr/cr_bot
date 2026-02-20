@@ -1,0 +1,9 @@
+path: /Users/sasha/cr_bot/KataCR/logs/generation
+
+train: yolo_annotations.txt
+val: null
+
+names:
+  0: bar
+  1: bar-level
+  

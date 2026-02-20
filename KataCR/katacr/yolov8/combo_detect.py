@@ -23,7 +23,7 @@ path_detectors = [
   # path_root / './runs/detector1_v0.7.6.pt',
   # path_root / './runs/detector2_v0.7.6.pt',
   # path_root / './runs/detector3_v0.7.6.pt',
-  path_root / './runs/detector1_v0.7.13.pt',
+  # path_root / './runs/detector1_v0.7.13.pt',
   path_root / './runs/detector2_v0.7.13.pt',
   # path_root / './runs/best.pt',
 ]
@@ -34,10 +34,10 @@ class ComboDetector:
     self.show_conf, self.conf = show_conf, conf
     self.iou_thre = iou_thre
     self.tracker = None
-    if tracker == 'bytetrack':
-      self.conf = 0.1
-      self.tracker_cfg_path = str(path_root/'./katacr/yolov8/bytetrack.yaml')
-      cr_on_predict_start(self, persist=True)
+    # if tracker == 'bytetrack':
+    #   self.conf = 0.1
+    #   self.tracker_cfg_path = str(path_root/'./katacr/yolov8/bytetrack.yaml')
+    #   cr_on_predict_start(self, persist=True)
   
   def infer(self, x, pil=False):
     """
@@ -59,7 +59,7 @@ class ComboDetector:
       boxes = p.orig_boxes.clone()
       for i in range(len(boxes)):
         if p.names[int(boxes[i, 5])] not in unit2idx:
-          print('Warning: ', p.names[int(boxes[i, 5])], 'not in units')
+          # print('Warning: ', p.names[int(boxes[i, 5])], 'not in units')
           continue
         boxes[i, 5] = unit2idx[p.names[int(boxes[i, 5])]]
         preds.append(boxes[i])
@@ -130,35 +130,35 @@ class ComboDetector:
 
 
 if __name__ == '__main__':
-  path_source = "/Users/sasha/cr_bot/screenshot/Canon-Gold.MP4"
-  model = YOLO(path_detectors[0])
-  model.save('model')
+  path_source = "screenshot/12.png"
+  # model = YOLO(path_detectors[0])
+  # model.save('model')
 
-  results = model(source=path_source)
-  print(list(results[0].boxes))
+  # results = model(source=path_source)
+
   # Визуализация результатов
-  field = [[None for _ in range(8)] for _ in range(8)]
-  for r in results:
-      im_array = r.plot()  # изображение с bounding boxes
-      centers = []
-      if len(r.boxes.data) == 0:
-        continue
-      mn = mx = [r.boxes.data[0][0], r.boxes.data[0][1]]
-      mn = mx.copy()
-      for i in r.boxes.data:
-          mn[0] = min(mn[0], i[0])
-          mn[1] = min(mn[1], i[1])
-          mx[0] = max(mx[0], i[2])
-          mx[1] = max(mx[1], i[3])
-      for i in r.boxes.data:
-          centers.append([float((i[0] + i[2]) / 2 - mn[0]) / (mx[0] - mn[0]), float((i[1] + i[3]) / 2 - mn[1]) / (mx[1] - mn[1])])
-          for j in range(2):
-              centers[-1][j] = math.floor(centers[-1][j] * 8)
-          if (field[centers[-1][1]][centers[-1][0]] is None):
-              field[centers[-1][1]][centers[-1][0]] = int(i[5])
+  # field = [[None for _ in range(8)] for _ in range(8)]
+  # for r in results:
+  #     im_array = r.plot()  # изображение с bounding boxes
+  #     centers = []
+  #     if len(r.boxes.data) == 0:
+  #       continue
+  #     mn = mx = [r.boxes.data[0][0], r.boxes.data[0][1]]
+  #     mn = mx.copy()
+  #     for i in r.boxes.data:
+  #         mn[0] = min(mn[0], i[0])
+  #         mn[1] = min(mn[1], i[1])
+  #         mx[0] = max(mx[0], i[2])
+  #         mx[1] = max(mx[1], i[3])
+  #     for i in r.boxes.data:
+  #         centers.append([float((i[0] + i[2]) / 2 - mn[0]) / (mx[0] - mn[0]), float((i[1] + i[3]) / 2 - mn[1]) / (mx[1] - mn[1])])
+  #         for j in range(2):
+  #             centers[-1][j] = math.floor(centers[-1][j] * 8)
+  #         if (field[centers[-1][1]][centers[-1][0]] is None):
+  #             field[centers[-1][1]][centers[-1][0]] = int(i[5])
       
-      # print(centers, r.boxes.cls, r.orig_shape)
-      cv2.imwrite('result.png', im_array)
+  #     # print(centers, r.boxes.cls, r.orig_shape)
+  #     cv2.imwrite('result.png', im_array)
 
   combo = ComboDetector(path_detectors, show_conf=True, conf=0.2, iou_thre=0.5, tracker='botsort')
 

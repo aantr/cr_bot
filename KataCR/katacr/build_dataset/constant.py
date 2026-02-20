@@ -17,7 +17,8 @@ root = Path(__file__).parents[2]
 path_logs = root / "logs"
 path_logs.mkdir(exist_ok=True)
 path_features = root / "katacr/features"
-path_yaml = root / "katacr/yolov8/ClashRoyale_detection.yaml"
+# path_yaml = root / "katacr/yolov8/ClashRoyale_detection.yaml"
+path_yaml = root / "../bar-dataset.yaml"
 # path_videos = Path("/home/yy/Coding/datasets/CR/fast_pig_2.6")
 # path_dataset = Path("/home/wty/Coding/datasets/CR")
 path_dataset = Path("KataCR/Clash-Royale-Detection-Dataset")
@@ -70,9 +71,9 @@ split_bbox_params = {  # format: [x_top_left, y_top_left, width, hight]
 }
 ratio = {
     "part2": (1.57, 1.58),  # 568x896
-    "2.16": (2.16, 2.17),  # 592x1280 oyassu
+    "2.16": (2.16, 2.18),  # 592x1280 oyassu
     "2.22": (2.22, 2.23),  # 1080x2400 or 576x1280
-    "2.13": (2.13, 2.14),  # 600x1280
+    "2.13": (2, 2.14),  # 600x1280
 }
 
 ### NOT Used ###

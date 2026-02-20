@@ -18,6 +18,7 @@ from katacr.build_dataset.utils.datapath_manager import PathManager
 def ratio2name(img):
   if isinstance(img, Image.Image): img = np.array(img)
   r = img.shape[0] / img.shape[1]
+  print(r)
   for name, ratio in const.ratio.items():
     if ratio[0] <= r <= ratio[1]:
       return name

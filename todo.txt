@@ -1,0 +1,6 @@
+class names in constants/labels or yaml
+
+yolo.py
+dataset format 
+train
+run

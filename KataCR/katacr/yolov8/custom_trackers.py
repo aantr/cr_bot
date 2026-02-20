@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 from ultralytics.trackers.track import check_yaml, IterableSimpleNamespace, partial, torch, Path
-=======
-from ultralytics.trackers.track import check_yaml, IterableSimpleNamespace, yaml_load, partial, torch, Path
->>>>>>> acab0e055c7a7ecef7ff6e4b77fc268cf2de526d
 from ultralytics.trackers.byte_tracker import BYTETracker, STrack, matching, TrackState, np, xywh2ltwh
 from ultralytics.trackers.bot_sort import BOTSORT
 

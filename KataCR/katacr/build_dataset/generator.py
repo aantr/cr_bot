@@ -635,12 +635,13 @@ class Generator:
         for u in unit_avail[::-1]:  # increase order for drawing
             # write in .txt about object
             # write_this_box = False
-            # if u.cls_name in ['bar', 'bar-level']:
+            # if 1:
             #     print(u.xyxy, u.cls_name)
             #     write_this_box = True
 
             u.draw(img)
             cls.add(u.cls)
+
             if u.cls_name in self.moveable_unit2idx:
                 self.moveable_unit_frequency[
                     self.moveable_unit2idx[u.cls_name + "_" + str(u.states[0])]
@@ -679,7 +680,6 @@ class Generator:
             annotations = ann_generator.parse_coordinates(
                 box, format_type="yolo_normalized"
             )
-
             errors = ann_generator.validate_annotations(annotations)
             if errors:
                 print("Ошибки валидации:")

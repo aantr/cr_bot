@@ -13,7 +13,7 @@ time: # (float, optional) number of hours to train for, overrides epochs if supp
 patience: 10 # (int) epochs to wait for no observable improvement for early stopping of training
 batch: -1 # (int) number of images per batch (-1 for AutoBatch)
 # batch: 16 # (int) number of images per batch (-1 for AutoBatch)
-imgsz: 1136 # (int | list) input images size as int for train and val modes, or list[w,h] for predict and export modes
+imgsz: 1152 # (int | list) input images size as int for train and val modes, or list[w,h] for predict and export modes
 # - 576
 # - 896
 # - 1136
