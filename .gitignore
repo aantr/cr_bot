@@ -1,4 +1,3 @@
-# KataCR
 .vscode
 KataCR/__pycache__
 KataCR/*old*
@@ -12,4 +11,4 @@ KataCR/.VSCodeCounter
 venv
 runs
 my_dataset
-screenshot/bar/bars.psd
+screenshot
