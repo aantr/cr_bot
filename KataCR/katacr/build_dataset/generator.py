@@ -634,10 +634,12 @@ class Generator:
                 break
         for u in unit_avail[::-1]:  # increase order for drawing
             # write in .txt about object
-            # write_this_box = False
-            # if 1:
-            #     print(u.xyxy, u.cls_name)
-            #     write_this_box = True
+            write_this_box = True
+            if u.cls_name in ['bar', 'bar-level'] and u.states[0] == 0:
+                # print(u.cls, u.xyxy, u.cls_name, u.states)
+                write_this_box = False
+                pass
+            # print(u.cls_name, u.states, u.cls)
 
             u.draw(img)
             cls.add(u.cls)
@@ -650,10 +652,10 @@ class Generator:
                 self.noise_unit_frequency[
                     self.noise_unit2idx[u.cls_name + "_" + str(u.states[0])]
                 ] += 1
-            if u.cls != -1 and u.cls_name in self.recognize_names:
+            if u.cls != -1 and u.cls_name in self.recognize_names and write_this_box:
                 # box.append((*u.xyxy_visiable, *u.states, u.cls))  # xyxy visiable is bad
-                # box.append((*u.xyxy, *u.states, u.cls))
-                box.append((*u.xyxy, *u.states))
+                box.append((*u.xyxy, u.cls))
+                # box.append((*u.xyxy, *u.states))
         box = np.array(box, np.float32)
         if img_size is not None:
             img, box = self.resize_and_pad(img, box, img_size)
@@ -1164,7 +1166,7 @@ if __name__ == "__main__":
         images.append(f"gen_{i + 1}.jpg")
         annotations.append(f"gen_{i + 1}.txt")
         generator.add_tower()
-        generator.add_unit(n=random.randint(10, 40))
+        generator.add_unit(n=random.randint(10, 15))
         x, box, _ = generator.build(
             verbose=False,
             show_box=False,
@@ -1180,11 +1182,12 @@ if __name__ == "__main__":
         # for i in range(len(f)):
         #   if f[i] > 0:
         #     print(f"{generator.idx2moveable_unit[i]}: {f[i]}")
-        # print(ret)
+        # # print(ret)
         # print(generator.map_cfg['ground'])
         generator.reset()
     with open(path_generation / 'yolo_annotations.txt', 'w') as f:
         f.write('\n'.join([f'./{images[i]}' for i in range(len(images))]))
+
     # generator = Generator(background_index=None, seed=42, intersect_ratio_thre=0.6)
     # generator.add_tower()
     # generator.add_unit(n=80)
