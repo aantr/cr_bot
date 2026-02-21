@@ -1,8 +1,0 @@
-path: /Users/sasha/cr_bot/track_level/dataset
-
-train: data/obj_train_data/images/train
-val: data/obj_train_data/images/val
-test: null
-
-names:
-  0: level

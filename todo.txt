@@ -1,3 +1,6 @@
+KataCr для генерации датасета
+остальное обучение в 
+
 class names in constants/labels or yaml
 
 генерация датасета с барами
