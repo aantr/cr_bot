@@ -4,7 +4,6 @@ import numpy as np
 size = (920, 512)  # (width, height)
 
 crop_coords = {
-    (1136, 1792): (0, 0, 1136, 1792),
     (1206, 2622): (251, 2622 - 512, 1206 - 35, 2622) # my iphone 16 pro
 }
 
@@ -70,22 +69,3 @@ if __name__ == "__main__":
         print(f"Error: {e}")
     except Exception as e:
         print(f"Unexpected error: {e}")
-
-    # # Пример использования с конкретными координатами для iPhone 16 Pro
-    # print("\n" + "="*50)
-    # print("Example for iPhone 16 Pro image:")
-    
-    # # Если у вас есть изображение с размером 1206x2622
-    # iphone_image_path = "iphone_photo.jpg"  # Замените на путь к вашему изображению
-    
-    # try:
-    #     result = get_image_cards_format(iphone_image_path)
-    #     print(f"iPhone image processed successfully!")
-    #     print(f"Result shape: {result.shape}")
-    #     cv2.imwrite("iphone_processed.jpg", result)
-    #     print("iPhone result saved as 'iphone_processed.jpg'")
-    # except ValueError as e:
-    #     print(f"iPhone processing error: {e}")
-    #     print("Make sure your image has one of these sizes:")
-    #     for size_key in crop_coords.keys():
-    #         print(f"  - {size_key[0]} x {size_key[1]}")
