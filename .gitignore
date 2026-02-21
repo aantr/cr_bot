@@ -13,3 +13,4 @@ runs
 my_dataset
 screenshot
 *.cache
+__pycache__
