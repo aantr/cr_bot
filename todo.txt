@@ -1,13 +1,15 @@
+some shit about project
+
 KataCr для генерации датасета
-остальное обучение в 
+download_cards
+cnn_detector
+get_bluestacks with minicap
 
 class names in constants/labels or yaml
 
 генерация датасета с барами
-генерация датасета из реальных картинок: преобразовать картинку в нужный размер 
+генерация датасета из реальных картинок: преобразовать картинку в нужный размер image2yolo.py
 обучение модели с барами
-
-
 
 yolo.py
 dataset format 
