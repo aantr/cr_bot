@@ -9,7 +9,7 @@ import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 class ClashRoyaleDatasetDownloader:
-    def __init__(self, base_url="https://royaleapi.com/cards/popular?sort=rating", output_dir="clash_royale_cards"):
+    def __init__(self, base_url="https://royaleapi.com/cards/popular?sort=rating", output_dir="cards_dataset"):
         """
         Инициализация загрузчика датасета
         
@@ -215,11 +215,11 @@ def main():
     """
     
     # Ваш HTML контент (вы можете загрузить его из файла или веб-страницы)
-    html_content = open('data.html').read()
+    html_content = open('cards_dataset/data.html').read()
     
     # Инициализация загрузчика
     downloader = ClashRoyaleDatasetDownloader(
-        output_dir="clash_royale_dataset"
+        output_dir="cards_dataset"
     )
     
     # Парсим HTML и получаем информацию о картах
@@ -247,7 +247,7 @@ def main():
     # Создаем структуру датасета
     downloader.create_dataset_structure(cards_info)
     
-    print(f"\nГотово! Датасет сохранен в папке 'clash_royale_dataset'")
+    print(f"\nГотово! Датасет сохранен в папке 'cards_dataset'")
 
 # Альтернативный способ - скачивание с веб-страницы
 def download_from_webpage(url):
