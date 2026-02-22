@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 # Путь к папке с изображениями
 dataset_folder = 'cards_dataset/images'
-input_image_path = 'examples/example3.png'
+input_image_path = 'examples/example5.png'
 
 # Преобразования для изображений
 transform = transforms.Compose([
@@ -19,7 +19,8 @@ transform = transforms.Compose([
 ])
 
 # Загрузка предобученной модели ResNet
-model = models.resnet50(pretrained=True)
+model = models.resnet152(pretrained=True)
+# models.resnet18
 # Удаляем последний слой классификации для получения признаков
 model = torch.nn.Sequential(*(list(model.children())[:-1]))
 model.eval()
@@ -63,13 +64,13 @@ def find_most_similar(input_feat, dataset_feats, image_paths):
     results = {}
     
     # 1. Косинусное сходство (чем больше, тем лучше)
-    cos_sim = cosine_similarity([input_feat], dataset_feats)[0]
-    best_cos_idx = np.argmax(cos_sim)
-    results['cosine'] = {
-        'index': best_cos_idx,
-        'score': cos_sim[best_cos_idx],
-        'path': image_paths[best_cos_idx]
-    }
+    # cos_sim = cosine_similarity([input_feat], dataset_feats)[0]
+    # best_cos_idx = np.argmax(cos_sim)
+    # results['cosine'] = {
+    #     'index': best_cos_idx,
+    #     'score': cos_sim[best_cos_idx],
+    #     'path': image_paths[best_cos_idx]
+    # }
     
     # 2. Евклидово расстояние (чем меньше, тем лучше)
     eucl_dist = euclidean_distances([input_feat], dataset_feats)[0]
@@ -81,17 +82,17 @@ def find_most_similar(input_feat, dataset_feats, image_paths):
     }
     
     # 3. Манхэттенское расстояние (L1) (чем меньше, тем лучше)
-    manhattan_dist = []
-    for feat in dataset_feats:
-        dist = cityblock(input_feat, feat)
-        manhattan_dist.append(dist)
-    manhattan_dist = np.array(manhattan_dist)
-    best_manh_idx = np.argmin(manhattan_dist)
-    results['manhattan'] = {
-        'index': best_manh_idx,
-        'score': manhattan_dist[best_manh_idx],
-        'path': image_paths[best_manh_idx]
-    }
+    # manhattan_dist = []
+    # for feat in dataset_feats:
+    #     dist = cityblock(input_feat, feat)
+    #     manhattan_dist.append(dist)
+    # manhattan_dist = np.array(manhattan_dist)
+    # best_manh_idx = np.argmin(manhattan_dist)
+    # results['manhattan'] = {
+    #     'index': best_manh_idx,
+    #     'score': manhattan_dist[best_manh_idx],
+    #     'path': image_paths[best_manh_idx]
+    # }
     
     # 4. Корреляционное сходство (чем больше, тем лучше)
     def correlation_similarity(a, b):
@@ -123,17 +124,17 @@ print("="*50)
 print(f"\nВходное изображение: {input_image_path}")
 print(f"Количество изображений в датасете: {len(image_paths)}")
 
-print("\n1. КОСИНУСНОЕ СХОДСТВО (лучшее совпадение):")
-print(f"   Путь: {similar_results['cosine']['path']}")
-print(f"   Оценка: {similar_results['cosine']['score']:.4f}")
+# print("\n1. КОСИНУСНОЕ СХОДСТВО (лучшее совпадение):")
+# print(f"   Путь: {similar_results['cosine']['path']}")
+# print(f"   Оценка: {similar_results['cosine']['score']:.4f}")
 
 print("\n2. ЕВКЛИДОВО РАССТОЯНИЕ (наименьшее расстояние):")
 print(f"   Путь: {similar_results['euclidean']['path']}")
 print(f"   Расстояние: {similar_results['euclidean']['score']:.4f}")
 
-print("\n3. МАНХЭТТЕНСКОЕ РАССТОЯНИЕ (наименьшее расстояние):")
-print(f"   Путь: {similar_results['manhattan']['path']}")
-print(f"   Расстояние: {similar_results['manhattan']['score']:.4f}")
+# print("\n3. МАНХЭТТЕНСКОЕ РАССТОЯНИЕ (наименьшее расстояние):")
+# print(f"   Путь: {similar_results['manhattan']['path']}")
+# print(f"   Расстояние: {similar_results['manhattan']['score']:.4f}")
 
 print("\n4. КОРРЕЛЯЦИОННОЕ СХОДСТВО (наивысшая корреляция):")
 print(f"   Путь: {similar_results['correlation']['path']}")
@@ -145,11 +146,11 @@ print("ТОП-5 ИЗОБРАЖЕНИЙ ПО КАЖДОЙ МЕТРИКЕ")
 print("="*50)
 
 # Топ-5 по косинусному сходству
-cos_scores = cosine_similarity([input_features], features_list)[0]
-top5_cos_indices = np.argsort(cos_scores)[-5:][::-1]
-print("\nТоп-5 по косинусному сходству:")
-for i, idx in enumerate(top5_cos_indices, 1):
-    print(f"   {i}. {os.path.basename(image_paths[idx])} - оценка: {cos_scores[idx]:.4f}")
+# cos_scores = cosine_similarity([input_features], features_list)[0]
+# top5_cos_indices = np.argsort(cos_scores)[-5:][::-1]
+# print("\nТоп-5 по косинусному сходству:")
+# for i, idx in enumerate(top5_cos_indices, 1):
+#     print(f"   {i}. {os.path.basename(image_paths[idx])} - оценка: {cos_scores[idx]:.4f}")
 
 # Топ-5 по евклидову расстоянию
 eucl_distances = euclidean_distances([input_features], features_list)[0]
@@ -158,9 +159,9 @@ print("\nТоп-5 по евклидову расстоянию (меньше = �
 for i, idx in enumerate(top5_eucl_indices, 1):
     print(f"   {i}. {os.path.basename(image_paths[idx])} - расстояние: {eucl_distances[idx]:.4f}")
 
-# Топ-5 по манхэттенскому расстоянию
-manh_distances = [cityblock(input_features, feat) for feat in features_list]
-top5_manh_indices = np.argsort(manh_distances)[:5]
-print("\nТоп-5 по манхэттенскому расстоянию (меньше = лучше):")
-for i, idx in enumerate(top5_manh_indices, 1):
-    print(f"   {i}. {os.path.basename(image_paths[idx])} - расстояние: {manh_distances[idx]:.4f}")
+# # Топ-5 по манхэттенскому расстоянию
+# manh_distances = [cityblock(input_features, feat) for feat in features_list]
+# top5_manh_indices = np.argsort(manh_distances)[:5]
+# print("\nТоп-5 по манхэттенскому расстоянию (меньше = лучше):")
+# for i, idx in enumerate(top5_manh_indices, 1):
+#     print(f"   {i}. {os.path.basename(image_paths[idx])} - расстояние: {manh_distances[idx]:.4f}")
