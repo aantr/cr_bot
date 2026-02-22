@@ -1,0 +1,863 @@
+Информация о картах Clash Royale
+==================================================
+
+1. Rascals
+   Data-card: rascals
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/rascals.png
+   Filename: Rascals_rascals
+
+2. Royal Ghost Evolution
+   Data-card: royal-ghost-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/royal-ghost-ev1.png
+   Filename: Royal Ghost Evolution_royal-ghost-ev1
+
+3. Cannon Cart
+   Data-card: cannon-cart
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/cannon-cart.png
+   Filename: Cannon Cart_cannon-cart
+
+4. Goblin Cage Evolution
+   Data-card: goblin-cage-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-cage-ev1.png
+   Filename: Goblin Cage Evolution_goblin-cage-ev1
+
+5. Barbarian Barrel
+   Data-card: barbarian-barrel
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/barbarian-barrel.png
+   Filename: Barbarian Barrel_barbarian-barrel
+
+6. Zappies
+   Data-card: zappies
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/zappies.png
+   Filename: Zappies_zappies
+
+7. Bomb Tower
+   Data-card: bomb-tower
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/bomb-tower.png
+   Filename: Bomb Tower_bomb-tower
+
+8. Royal Hogs Evolution
+   Data-card: royal-hogs-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/royal-hogs-ev1.png
+   Filename: Royal Hogs Evolution_royal-hogs-ev1
+
+9. Goblin Hut
+   Data-card: goblin-hut
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-hut.png
+   Filename: Goblin Hut_goblin-hut
+
+10. Hunter
+   Data-card: hunter
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/hunter.png
+   Filename: Hunter_hunter
+
+11. Mortar Evolution
+   Data-card: mortar-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mortar-ev1.png
+   Filename: Mortar Evolution_mortar-ev1
+
+12. Battle Ram Evolution
+   Data-card: battle-ram-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/battle-ram-ev1.png
+   Filename: Battle Ram Evolution_battle-ram-ev1
+
+13. Bowler
+   Data-card: bowler
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/bowler.png
+   Filename: Bowler_bowler
+
+14. Lava Hound
+   Data-card: lava-hound
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/lava-hound.png
+   Filename: Lava Hound_lava-hound
+
+15. Heal Spirit
+   Data-card: heal-spirit
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/heal-spirit.png
+   Filename: Heal Spirit_heal-spirit
+
+16. Electro Spirit
+   Data-card: electro-spirit
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/electro-spirit.png
+   Filename: Electro Spirit_electro-spirit
+
+17. Goblin Drill Evolution
+   Data-card: goblin-drill-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-drill-ev1.png
+   Filename: Goblin Drill Evolution_goblin-drill-ev1
+
+18. Skeleton Barrel Evolution
+   Data-card: skeleton-barrel-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/skeleton-barrel-ev1.png
+   Filename: Skeleton Barrel Evolution_skeleton-barrel-ev1
+
+19. Suspicious Bush
+   Data-card: suspicious-bush
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/suspicious-bush.png
+   Filename: Suspicious Bush_suspicious-bush
+
+20. Fisherman
+   Data-card: fisherman
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/fisherman.png
+   Filename: Fisherman_fisherman
+
+21. Goblin Demolisher
+   Data-card: goblin-demolisher
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-demolisher.png
+   Filename: Goblin Demolisher_goblin-demolisher
+
+22. Dark Prince
+   Data-card: dark-prince
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/dark-prince.png
+   Filename: Dark Prince_dark-prince
+
+23. Flying Machine
+   Data-card: flying-machine
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/flying-machine.png
+   Filename: Flying Machine_flying-machine
+
+24. Hero Goblins
+   Data-card: goblins-hero
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblins-hero.png
+   Filename: Hero Goblins_goblins-hero
+
+25. Baby Dragon Evolution
+   Data-card: baby-dragon-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/baby-dragon-ev1.png
+   Filename: Baby Dragon Evolution_baby-dragon-ev1
+
+26. Balloon
+   Data-card: balloon
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/balloon.png
+   Filename: Balloon_balloon
+
+27. Zap Evolution
+   Data-card: zap-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/zap-ev1.png
+   Filename: Zap Evolution_zap-ev1
+
+28. Inferno Dragon Evolution
+   Data-card: inferno-dragon-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/inferno-dragon-ev1.png
+   Filename: Inferno Dragon Evolution_inferno-dragon-ev1
+
+29. Archers Evolution
+   Data-card: archers-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/archers-ev1.png
+   Filename: Archers Evolution_archers-ev1
+
+30. X-Bow
+   Data-card: x-bow
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/x-bow.png
+   Filename: X-Bow_x-bow
+
+31. Royal Recruits Evolution
+   Data-card: royal-recruits-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/royal-recruits-ev1.png
+   Filename: Royal Recruits Evolution_royal-recruits-ev1
+
+32. Royal Giant Evolution
+   Data-card: royal-giant-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/royal-giant-ev1.png
+   Filename: Royal Giant Evolution_royal-giant-ev1
+
+33. Lightning
+   Data-card: lightning
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/lightning.png
+   Filename: Lightning_lightning
+
+34. Skeleton Dragons
+   Data-card: skeleton-dragons
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/skeleton-dragons.png
+   Filename: Skeleton Dragons_skeleton-dragons
+
+35. Ice Wizard
+   Data-card: ice-wizard
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/ice-wizard.png
+   Filename: Ice Wizard_ice-wizard
+
+36. Mega Minion
+   Data-card: mega-minion
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mega-minion.png
+   Filename: Mega Minion_mega-minion
+
+37. Archer Queen
+   Data-card: archer-queen
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/archer-queen.png
+   Filename: Archer Queen_archer-queen
+
+38. Goblinstein
+   Data-card: goblinstein
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblinstein.png
+   Filename: Goblinstein_goblinstein
+
+39. Tornado
+   Data-card: tornado
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/tornado.png
+   Filename: Tornado_tornado
+
+40. Giant Snowball
+   Data-card: giant-snowball
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/giant-snowball.png
+   Filename: Giant Snowball_giant-snowball
+
+41. Golem
+   Data-card: golem
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/golem.png
+   Filename: Golem_golem
+
+42. Vines
+   Data-card: vines
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/vines.png
+   Filename: Vines_vines
+
+43. Skeletons
+   Data-card: skeletons
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/skeletons.png
+   Filename: Skeletons_skeletons
+
+44. Elixir Collector
+   Data-card: elixir-collector
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/elixir-collector.png
+   Filename: Elixir Collector_elixir-collector
+
+45. Skeleton King
+   Data-card: skeleton-king
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/skeleton-king.png
+   Filename: Skeleton King_skeleton-king
+
+46. Fire Spirit
+   Data-card: fire-spirit
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/fire-spirit.png
+   Filename: Fire Spirit_fire-spirit
+
+47. Bandit
+   Data-card: bandit
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/bandit.png
+   Filename: Bandit_bandit
+
+48. Hero Wizard
+   Data-card: wizard-hero
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/wizard-hero.png
+   Filename: Hero Wizard_wizard-hero
+
+49. Graveyard
+   Data-card: graveyard
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/graveyard.png
+   Filename: Graveyard_graveyard
+
+50. Three Musketeers
+   Data-card: three-musketeers
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/three-musketeers.png
+   Filename: Three Musketeers_three-musketeers
+
+51. Giant Snowball Evolution
+   Data-card: giant-snowball-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/giant-snowball-ev1.png
+   Filename: Giant Snowball Evolution_giant-snowball-ev1
+
+52. Bomber
+   Data-card: bomber
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/bomber.png
+   Filename: Bomber_bomber
+
+53. Giant Skeleton
+   Data-card: giant-skeleton
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/giant-skeleton.png
+   Filename: Giant Skeleton_giant-skeleton
+
+54. Spirit Empress
+   Data-card: spirit-empress
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/spirit-empress.png
+   Filename: Spirit Empress_spirit-empress
+
+55. Freeze
+   Data-card: freeze
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/freeze.png
+   Filename: Freeze_freeze
+
+56. Fireball
+   Data-card: fireball
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/fireball.png
+   Filename: Fireball_fireball
+
+57. Tower Princess
+   Data-card: tower-princess
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/tower-princess.png
+   Filename: Tower Princess_tower-princess
+
+58. Bomber Evolution
+   Data-card: bomber-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/bomber-ev1.png
+   Filename: Bomber Evolution_bomber-ev1
+
+59. Earthquake
+   Data-card: earthquake
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/earthquake.png
+   Filename: Earthquake_earthquake
+
+60. Skeleton Army Evolution
+   Data-card: skeleton-army-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/skeleton-army-ev1.png
+   Filename: Skeleton Army Evolution_skeleton-army-ev1
+
+61. Golden Knight
+   Data-card: golden-knight
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/golden-knight.png
+   Filename: Golden Knight_golden-knight
+
+62. Berserker
+   Data-card: berserker
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/berserker.png
+   Filename: Berserker_berserker
+
+63. Mother Witch
+   Data-card: mother-witch
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mother-witch.png
+   Filename: Mother Witch_mother-witch
+
+64. Void
+   Data-card: void
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/void.png
+   Filename: Void_void
+
+65. Goblin Cage
+   Data-card: goblin-cage
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-cage.png
+   Filename: Goblin Cage_goblin-cage
+
+66. Wall Breakers Evolution
+   Data-card: wall-breakers-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/wall-breakers-ev1.png
+   Filename: Wall Breakers Evolution_wall-breakers-ev1
+
+67. Lumberjack Evolution
+   Data-card: lumberjack-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/lumberjack-ev1.png
+   Filename: Lumberjack Evolution_lumberjack-ev1
+
+68. Royal Hogs
+   Data-card: royal-hogs
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/royal-hogs.png
+   Filename: Royal Hogs_royal-hogs
+
+69. Musketeer Evolution
+   Data-card: musketeer-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/musketeer-ev1.png
+   Filename: Musketeer Evolution_musketeer-ev1
+
+70. Cannon Evolution
+   Data-card: cannon-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/cannon-ev1.png
+   Filename: Cannon Evolution_cannon-ev1
+
+71. The Log
+   Data-card: the-log
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/the-log.png
+   Filename: The Log_the-log
+
+72. Minions
+   Data-card: minions
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/minions.png
+   Filename: Minions_minions
+
+73. Poison
+   Data-card: poison
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/poison.png
+   Filename: Poison_poison
+
+74. Furnace Evolution
+   Data-card: furnace-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/furnace-ev1.png
+   Filename: Furnace Evolution_furnace-ev1
+
+75. Royal Delivery
+   Data-card: royal-delivery
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/royal-delivery.png
+   Filename: Royal Delivery_royal-delivery
+
+76. Knight
+   Data-card: knight
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/knight.png
+   Filename: Knight_knight
+
+77. Dart Goblin
+   Data-card: dart-goblin
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/dart-goblin.png
+   Filename: Dart Goblin_dart-goblin
+
+78. Tombstone
+   Data-card: tombstone
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/tombstone.png
+   Filename: Tombstone_tombstone
+
+79. Executioner Evolution
+   Data-card: executioner-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/executioner-ev1.png
+   Filename: Executioner Evolution_executioner-ev1
+
+80. Night Witch
+   Data-card: night-witch
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/night-witch.png
+   Filename: Night Witch_night-witch
+
+81. Wall Breakers
+   Data-card: wall-breakers
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/wall-breakers.png
+   Filename: Wall Breakers_wall-breakers
+
+82. Hero Giant
+   Data-card: giant-hero
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/giant-hero.png
+   Filename: Hero Giant_giant-hero
+
+83. Sparky
+   Data-card: sparky
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/sparky.png
+   Filename: Sparky_sparky
+
+84. Electro Giant
+   Data-card: electro-giant
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/electro-giant.png
+   Filename: Electro Giant_electro-giant
+
+85. Hunter Evolution
+   Data-card: hunter-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/hunter-ev1.png
+   Filename: Hunter Evolution_hunter-ev1
+
+86. Electro Wizard
+   Data-card: electro-wizard
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/electro-wizard.png
+   Filename: Electro Wizard_electro-wizard
+
+87. Guards
+   Data-card: guards
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/guards.png
+   Filename: Guards_guards
+
+88. Goblin Giant Evolution
+   Data-card: goblin-giant-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-giant-ev1.png
+   Filename: Goblin Giant Evolution_goblin-giant-ev1
+
+89. Royal Recruits
+   Data-card: royal-recruits
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/royal-recruits.png
+   Filename: Royal Recruits_royal-recruits
+
+90. Hero Knight
+   Data-card: knight-hero
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/knight-hero.png
+   Filename: Hero Knight_knight-hero
+
+91. Battle Healer
+   Data-card: battle-healer
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/battle-healer.png
+   Filename: Battle Healer_battle-healer
+
+92. P.E.K.K.A
+   Data-card: pekka
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/pekka.png
+   Filename: P.E.K.K.A_pekka
+
+93. Bats Evolution
+   Data-card: bats-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/bats-ev1.png
+   Filename: Bats Evolution_bats-ev1
+
+94. Magic Archer
+   Data-card: magic-archer
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/magic-archer.png
+   Filename: Magic Archer_magic-archer
+
+95. Mighty Miner
+   Data-card: mighty-miner
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mighty-miner.png
+   Filename: Mighty Miner_mighty-miner
+
+96. Ice Spirit
+   Data-card: ice-spirit
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/ice-spirit.png
+   Filename: Ice Spirit_ice-spirit
+
+97. Knight Evolution
+   Data-card: knight-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/knight-ev1.png
+   Filename: Knight Evolution_knight-ev1
+
+98. Battle Ram
+   Data-card: battle-ram
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/battle-ram.png
+   Filename: Battle Ram_battle-ram
+
+99. Tesla Evolution
+   Data-card: tesla-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/tesla-ev1.png
+   Filename: Tesla Evolution_tesla-ev1
+
+100. Ice Golem
+   Data-card: ice-golem
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/ice-golem.png
+   Filename: Ice Golem_ice-golem
+
+101. Goblin Curse
+   Data-card: goblin-curse
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-curse.png
+   Filename: Goblin Curse_goblin-curse
+
+102. Royal Ghost
+   Data-card: royal-ghost
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/royal-ghost.png
+   Filename: Royal Ghost_royal-ghost
+
+103. Ram Rider
+   Data-card: ram-rider
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/ram-rider.png
+   Filename: Ram Rider_ram-rider
+
+104. Barbarians Evolution
+   Data-card: barbarians-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/barbarians-ev1.png
+   Filename: Barbarians Evolution_barbarians-ev1
+
+105. Giant
+   Data-card: giant
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/giant.png
+   Filename: Giant_giant
+
+106. Skeletons Evolution
+   Data-card: skeletons-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/skeletons-ev1.png
+   Filename: Skeletons Evolution_skeletons-ev1
+
+107. Hero Mini P.E.K.K.A
+   Data-card: mini-pekka-hero
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mini-pekka-hero.png
+   Filename: Hero Mini P.E.K.K.A_mini-pekka-hero
+
+108. Electro Dragon Evolution
+   Data-card: electro-dragon-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/electro-dragon-ev1.png
+   Filename: Electro Dragon Evolution_electro-dragon-ev1
+
+109. Miner
+   Data-card: miner
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/miner.png
+   Filename: Miner_miner
+
+110. Goblin Barrel Evolution
+   Data-card: goblin-barrel-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-barrel-ev1.png
+   Filename: Goblin Barrel Evolution_goblin-barrel-ev1
+
+111. Goblins
+   Data-card: goblins
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblins.png
+   Filename: Goblins_goblins
+
+112. Furnace
+   Data-card: furnace
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/furnace.png
+   Filename: Furnace_furnace
+
+113. Little Prince
+   Data-card: little-prince
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/little-prince.png
+   Filename: Little Prince_little-prince
+
+114. Goblin Drill
+   Data-card: goblin-drill
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-drill.png
+   Filename: Goblin Drill_goblin-drill
+
+115. Hero Ice Golem
+   Data-card: ice-golem-hero
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/ice-golem-hero.png
+   Filename: Hero Ice Golem_ice-golem-hero
+
+116. Phoenix
+   Data-card: phoenix
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/phoenix.png
+   Filename: Phoenix_phoenix
+
+117. Goblin Gang
+   Data-card: goblin-gang
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-gang.png
+   Filename: Goblin Gang_goblin-gang
+
+118. Zap
+   Data-card: zap
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/zap.png
+   Filename: Zap_zap
+
+119. Lumberjack
+   Data-card: lumberjack
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/lumberjack.png
+   Filename: Lumberjack_lumberjack
+
+120. Prince
+   Data-card: prince
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/prince.png
+   Filename: Prince_prince
+
+121. Monk
+   Data-card: monk
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/monk.png
+   Filename: Monk_monk
+
+122. Valkyrie Evolution
+   Data-card: valkyrie-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/valkyrie-ev1.png
+   Filename: Valkyrie Evolution_valkyrie-ev1
+
+123. Royal Giant
+   Data-card: royal-giant
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/royal-giant.png
+   Filename: Royal Giant_royal-giant
+
+124. Cannon
+   Data-card: cannon
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/cannon.png
+   Filename: Cannon_cannon
+
+125. Arrows
+   Data-card: arrows
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/arrows.png
+   Filename: Arrows_arrows
+
+126. Hero Mega Minion
+   Data-card: mega-minion-hero
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mega-minion-hero.png
+   Filename: Hero Mega Minion_mega-minion-hero
+
+127. Cannoneer
+   Data-card: cannoneer
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/cannoneer.png
+   Filename: Cannoneer_cannoneer
+
+128. Musketeer
+   Data-card: musketeer
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/musketeer.png
+   Filename: Musketeer_musketeer
+
+129. Spear Goblins
+   Data-card: spear-goblins
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/spear-goblins.png
+   Filename: Spear Goblins_spear-goblins
+
+130. Rage
+   Data-card: rage
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/rage.png
+   Filename: Rage_rage
+
+131. Hog Rider
+   Data-card: hog-rider
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/hog-rider.png
+   Filename: Hog Rider_hog-rider
+
+132. Rocket
+   Data-card: rocket
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/rocket.png
+   Filename: Rocket_rocket
+
+133. Princess
+   Data-card: princess
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/princess.png
+   Filename: Princess_princess
+
+134. P.E.K.K.A Evolution
+   Data-card: pekka-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/pekka-ev1.png
+   Filename: P.E.K.K.A Evolution_pekka-ev1
+
+135. Inferno Dragon
+   Data-card: inferno-dragon
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/inferno-dragon.png
+   Filename: Inferno Dragon_inferno-dragon
+
+136. Hero Musketeer
+   Data-card: musketeer-hero
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/musketeer-hero.png
+   Filename: Hero Musketeer_musketeer-hero
+
+137. Minion Horde
+   Data-card: minion-horde
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/minion-horde.png
+   Filename: Minion Horde_minion-horde
+
+138. Ice Spirit Evolution
+   Data-card: ice-spirit-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/ice-spirit-ev1.png
+   Filename: Ice Spirit Evolution_ice-spirit-ev1
+
+139. Wizard Evolution
+   Data-card: wizard-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/wizard-ev1.png
+   Filename: Wizard Evolution_wizard-ev1
+
+140. Dart Goblin Evolution
+   Data-card: dart-goblin-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/dart-goblin-ev1.png
+   Filename: Dart Goblin Evolution_dart-goblin-ev1
+
+141. Bats
+   Data-card: bats
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/bats.png
+   Filename: Bats_bats
+
+142. Baby Dragon
+   Data-card: baby-dragon
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/baby-dragon.png
+   Filename: Baby Dragon_baby-dragon
+
+143. Mega Knight Evolution
+   Data-card: mega-knight-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mega-knight-ev1.png
+   Filename: Mega Knight Evolution_mega-knight-ev1
+
+144. Mini P.E.K.K.A
+   Data-card: mini-pekka
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mini-pekka.png
+   Filename: Mini P.E.K.K.A_mini-pekka
+
+145. Mega Knight
+   Data-card: mega-knight
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mega-knight.png
+   Filename: Mega Knight_mega-knight
+
+146. Inferno Tower
+   Data-card: inferno-tower
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/inferno-tower.png
+   Filename: Inferno Tower_inferno-tower
+
+147. Boss Bandit
+   Data-card: boss-bandit
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/boss-bandit.png
+   Filename: Boss Bandit_boss-bandit
+
+148. Clone
+   Data-card: clone
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/clone.png
+   Filename: Clone_clone
+
+149. Skeleton Army
+   Data-card: skeleton-army
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/skeleton-army.png
+   Filename: Skeleton Army_skeleton-army
+
+150. Barbarians
+   Data-card: barbarians
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/barbarians.png
+   Filename: Barbarians_barbarians
+
+151. Witch Evolution
+   Data-card: witch-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/witch-ev1.png
+   Filename: Witch Evolution_witch-ev1
+
+152. Dagger Duchess
+   Data-card: dagger-duchess
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/dagger-duchess.png
+   Filename: Dagger Duchess_dagger-duchess
+
+153. Tesla
+   Data-card: tesla
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/tesla.png
+   Filename: Tesla_tesla
+
+154. Elixir Golem
+   Data-card: elixir-golem
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/elixir-golem.png
+   Filename: Elixir Golem_elixir-golem
+
+155. Elite Barbarians
+   Data-card: elite-barbarians
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/elite-barbarians.png
+   Filename: Elite Barbarians_elite-barbarians
+
+156. Firecracker Evolution
+   Data-card: firecracker-ev1
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/firecracker-ev1.png
+   Filename: Firecracker Evolution_firecracker-ev1
+
+157. Archers
+   Data-card: archers
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/archers.png
+   Filename: Archers_archers
+
+158. Skeleton Barrel
+   Data-card: skeleton-barrel
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/skeleton-barrel.png
+   Filename: Skeleton Barrel_skeleton-barrel
+
+159. Valkyrie
+   Data-card: valkyrie
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/valkyrie.png
+   Filename: Valkyrie_valkyrie
+
+160. Goblin Barrel
+   Data-card: goblin-barrel
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-barrel.png
+   Filename: Goblin Barrel_goblin-barrel
+
+161. Mortar
+   Data-card: mortar
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mortar.png
+   Filename: Mortar_mortar
+
+162. Barbarian Hut
+   Data-card: barbarian-hut
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/barbarian-hut.png
+   Filename: Barbarian Hut_barbarian-hut
+
+163. Firecracker
+   Data-card: firecracker
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/firecracker.png
+   Filename: Firecracker_firecracker
+
+164. Royal Chef
+   Data-card: royal-chef
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/royal-chef.png
+   Filename: Royal Chef_royal-chef
+
+165. Executioner
+   Data-card: executioner
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/executioner.png
+   Filename: Executioner_executioner
+
+166. Goblin Machine
+   Data-card: goblin-machine
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-machine.png
+   Filename: Goblin Machine_goblin-machine
+
+167. Wizard
+   Data-card: wizard
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/wizard.png
+   Filename: Wizard_wizard
+
+168. Witch
+   Data-card: witch
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/witch.png
+   Filename: Witch_witch
+
+169. Mirror
+   Data-card: mirror
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/mirror.png
+   Filename: Mirror_mirror
+
+170. Goblin Giant
+   Data-card: goblin-giant
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/goblin-giant.png
+   Filename: Goblin Giant_goblin-giant
+
+171. Electro Dragon
+   Data-card: electro-dragon
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/electro-dragon.png
+   Filename: Electro Dragon_electro-dragon
+
+172. Rune Giant
+   Data-card: rune-giant
+   Image URL: https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v9-f09d5c9d/rune-giant.png
+   Filename: Rune Giant_rune-giant
+
