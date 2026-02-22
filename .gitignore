@@ -19,3 +19,4 @@ classificator_v2/cards_dataset
 classificator_v2/dataset
 create_bars_dataset/output_dataset
 create_bars_dataset/images
+classificator_v2/custom_resnet_model.pth
