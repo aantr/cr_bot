@@ -14,9 +14,7 @@ my_dataset
 screenshot
 *.cache
 __pycache__
-classificator_v1/cards_dataset
-classificator_v2/cards_dataset
-classificator_v2/dataset
+classificator/dataset
 create_bars_dataset/output_dataset
 create_bars_dataset/images
-classificator_v2/custom_resnet_model.pth
+classificator/custom_resnet_model.pth
