@@ -18,3 +18,4 @@ classificator/dataset
 create_bars_dataset/output_dataset
 create_bars_dataset/images
 classificator/custom_resnet_model.pth
+classificator/features_cache.pkl
