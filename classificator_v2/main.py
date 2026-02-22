@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 # Путь к папке с изображениями
 dataset_folder = 'cards_dataset/images'
-input_image_path = 'example3.png'
+input_image_path = 'examples/example3.png'
 
 # Преобразования для изображений
 transform = transforms.Compose([

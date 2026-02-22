@@ -16,14 +16,14 @@ import matplotlib.pyplot as plt
 train_data_dir = 'dataset/train'  # Папка с тренировочными данными
 
 dataset_folder = 'cards_dataset/images'
-input_image_path = 'example1.png'
+input_image_path = 'examples/example3.png'
 
 # Преобразования для тренировки
 train_transform = transforms.Compose([
     transforms.Resize((224, 224)),
-    transforms.RandomHorizontalFlip(p=0.5),
-    transforms.RandomRotation(10),
-    transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),
+    # transforms.RandomHorizontalFlip(p=0.5),
+    # transforms.RandomRotation(10),
+    # transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
 ])
@@ -171,7 +171,7 @@ def find_most_similar(model, input_feat, dataset_feats, image_paths, device):
 # Основная функция
 def main():
 
-    load = True
+    load = False
     if not load:
         # Обучение модели
         print("="*60)
