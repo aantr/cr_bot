@@ -14,3 +14,6 @@ my_dataset
 screenshot
 *.cache
 __pycache__
+classificator_v1/cards_dataset
+classificator_v2/cards_dataset
+classificator_v2/dataset
