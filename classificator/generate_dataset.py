@@ -41,46 +41,80 @@ def get_image_transforms():
     return [
         # Оригинальное изображение
         transforms.Compose([]),
-        # # Повороты (исправленные параметры)
-        # transforms.Compose([transforms.RandomRotation(degrees=(0, 30))]),
-        # transforms.Compose([transforms.RandomRotation(degrees=(0, 15))]),
-        # transforms.Compose([transforms.RandomRotation(degrees=(0, 45))]),
-        # # Горизонтальное отражение
-        # transforms.Compose(
-        #     [
-        #         transforms.RandomHorizontalFlip(p=1.0),
-        #     ]
-        # ),
-        # # Комбинации поворотов и отражений
-        # transforms.Compose(
-        #     [
-        #         transforms.RandomHorizontalFlip(p=1.0),
-        #         transforms.RandomRotation(degrees=(0, 20))
-        #     ]
-        # ),
-        # transforms.Compose(
-        #     [
-        #         transforms.RandomHorizontalFlip(p=0.5),
-        #         transforms.RandomRotation(degrees=(0, 10))
-        #     ]
-        # ),
-        # # Цветовые аугментации
-        # transforms.Compose([transforms.ColorJitter(brightness=0.2, contrast=0.2)]),
-        # transforms.Compose([transforms.ColorJitter(brightness=0.3, saturation=0.3)]),
-        # transforms.Compose([transforms.ColorJitter(hue=0.1)]),
+        # Повороты (исправленные параметры)
+        transforms.Compose([transforms.RandomRotation(degrees=(0, 30))]),
+        transforms.Compose([transforms.RandomRotation(degrees=(0, 15))]),
+        transforms.Compose([transforms.RandomRotation(degrees=(0, 45))]),
+        # Горизонтальное отражение
+        transforms.Compose(
+            [
+                transforms.RandomHorizontalFlip(p=1.0),
+            ]
+        ),
+        # Комбинации поворотов и отражений
+        transforms.Compose(
+            [
+                transforms.RandomHorizontalFlip(p=1.0),
+                transforms.RandomRotation(degrees=(0, 20))
+            ]
+        ),
+        transforms.Compose(
+            [
+                transforms.RandomHorizontalFlip(p=0.5),
+                transforms.RandomRotation(degrees=(0, 10))
+            ]
+        ),
+        # Цветовые аугментации
+        transforms.Compose([transforms.ColorJitter(brightness=0.2, contrast=0.2)]),
+        transforms.Compose([transforms.ColorJitter(brightness=0.3, saturation=0.3)]),
+        transforms.Compose([transforms.ColorJitter(hue=0.25)]),
     ]
 
+
+import random
+from PIL import Image
 
 def apply_augmentation(image_path, output_path, transform_func, index):
     """Применяет аугментацию к изображению и сохраняет его"""
     try:
         # Открываем изображение
-        img = Image.open(image_path).convert("RGB")
+        img = Image.open(image_path)
+        
+        # Сохраняем информацию о наличии альфа-канала
+        original_mode = img.mode
+        
+        # Конвертируем в подходящий режим для трансформации
+        if img.mode in ('RGBA', 'LA', 'P'):
+            # Если есть альфа-канал или прозрачность, работаем с RGBA
+            img = img.convert('RGBA')
+        else:
+            # Иначе работаем с RGB
+            img = img.convert('RGB')
 
         # Применяем трансформацию
         transformed_img = transform_func(img)
 
-        # Сохраняем с уникальным именем
+        # Если изображение имеет альфа-канал, накладываем его на случайную заливку
+        if hasattr(transformed_img, 'mode') and transformed_img.mode == 'RGBA':
+            # Генерируем случайный цвет для фона
+            random_color = (
+                random.randint(0, 255),
+                random.randint(0, 255),
+                random.randint(0, 255)
+            )
+            
+            # Создаем фон с случайным цветом
+            background = Image.new('RGB', transformed_img.size, random_color)
+            
+            # Накладываем изображение с альфа-каналом на фон
+            background.paste(transformed_img, mask=transformed_img.split()[-1])  # Используем альфа-канал как маску
+            transformed_img = background
+        elif isinstance(transformed_img, torch.Tensor) and transformed_img.shape[0] == 4:
+            # Если это тензор с 4 каналами (включая альфа)
+            # Здесь можно добавить обработку тензора, но для простоты оставим как есть
+            pass
+
+        # Формируем имя файла
         base_name = os.path.splitext(os.path.basename(image_path))[0]
         ext = os.path.splitext(image_path)[1]
         new_filename = f"{base_name}_aug_{index}{ext}"
@@ -90,12 +124,21 @@ def apply_augmentation(image_path, output_path, transform_func, index):
         if isinstance(transformed_img, torch.Tensor):
             save_image(transformed_img, new_path)
         else:
+            # Если изображение RGBA и формат не поддерживает прозрачность, сохраняем как PNG
+            if (hasattr(transformed_img, 'mode') and 
+                transformed_img.mode == 'RGBA' and 
+                ext.lower() not in ['.png', '.tiff', '.tif', '.webp']):
+                new_filename = f"{base_name}_aug_{index}.png"
+                new_path = os.path.join(output_path, new_filename)
+            
             transformed_img.save(new_path)
 
         return new_path
     except Exception as e:
         print(f"Ошибка при аугментации {image_path}: {e}")
         return None
+
+
 
 
 def process_single_image_as_class(
