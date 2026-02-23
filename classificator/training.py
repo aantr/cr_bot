@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 train_data_dir = 'dataset/train'  # Папка с тренировочными данными
 
 dataset_folder = 'cards_dataset/images'
-input_image_path = 'examples/example3.png'
+input_image_path = 'examples/example5.png'
 
 # Преобразования для тренировки
 train_transform = transforms.Compose([
@@ -171,7 +171,7 @@ def find_most_similar(model, input_feat, dataset_feats, image_paths, device):
 # Основная функция
 def main():
 
-    load = False
+    load = True
     if not load:
         # Обучение модели
         print("="*60)
