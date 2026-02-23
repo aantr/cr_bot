@@ -635,7 +635,14 @@ class Generator:
         for u in unit_avail[::-1]:  # increase order for drawing
             # write in .txt about object
             write_this_box = True
+
+            gen_blue = True
+
             if u.cls_name in ['bar', 'bar-level'] and u.states[0] == 0:
+                # print(u.cls, u.xyxy, u.cls_name, u.states)
+                write_this_box = False
+                pass
+            if gen_blue and u.cls_name and u.states[0] == 1:
                 # print(u.cls, u.xyxy, u.cls_name, u.states)
                 write_this_box = False
                 pass
@@ -657,14 +664,15 @@ class Generator:
                 box.append((*u.xyxy, u.cls))
                 # box.append((*u.xyxy, *u.states))
         box = np.array(box, np.float32)
-        if img_size is not None:
-            img, box = self.resize_and_pad(img, box, img_size)
-        if box_format == "cxcywh":
-            box[:, :4] = self.xyxy2cxcywh(box[:, :4], img.shape)
-        elif box_format == "xywh":
-            box[:, :4] = self.xyxy2xywh(box[:, :4], img.shape)
-        else:
-            raise RuntimeError(f"Don't know {box_format=}")
+        if box.size:
+            if img_size is not None:
+                img, box = self.resize_and_pad(img, box, img_size)
+            if box_format == "cxcywh":
+                box[:, :4] = self.xyxy2cxcywh(box[:, :4], img.shape)
+            elif box_format == "xywh":
+                box[:, :4] = self.xyxy2xywh(box[:, :4], img.shape)
+            else:
+                raise RuntimeError(f"Don't know {box_format=}")
         origin_img = img
         img = Image.fromarray(img)
         if show_box:

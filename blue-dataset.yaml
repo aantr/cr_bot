@@ -1,0 +1,23 @@
+path: /Users/sasha/cr_bot/KataCR/logs/generation
+
+train: yolo_annotations.txt
+val: null
+
+names:
+  0: elixir
+  1: musketeer
+  2: musketeer-evolution
+  3: fireball
+  4: ice-spirit
+  5: skeleton
+  6: the-log
+  7: cannon
+  8: cannon-evolution
+  9: skeleton-evolution
+  10: ice-golem
+  11: ice-spirit-evolution
+  12: hog-rider
+  13: musketeer-hero
+  14: ice-golem-hero
+
+  
