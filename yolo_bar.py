@@ -114,8 +114,8 @@ def train():
         workers=8,                        # number of worker threads
         patience=50,                       # early stopping patience
         save=True,                         # save checkpoints
-        # project='yolov8_training',         # project name
-        # name='exp',                         # experiment name
+        project='cr_bot',         # project name
+        name='yolo_bars',                         # experiment name
         exist_ok=True,                      # overwrite existing experiment
         pretrained=True,                    # use pretrained model
         optimizer='auto',                    # optimizer
@@ -253,7 +253,7 @@ def main():
     # plt.show()
     
     dataset_copy()
-    # train()
+    train()
 
 if __name__ == '__main__':
     main()
