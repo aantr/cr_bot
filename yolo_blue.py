@@ -81,9 +81,9 @@ def create_data_yaml(output_path, class_names):
 # Usage
 def dataset_copy():
     data_path = "KataCR/logs/generation"  # Your dataset folder with images and txt files
-    output_path = "yolo_dataset"  # Output folder for organized dataset
+    output_path = "yolo_dataset_blue"  # Output folder for organized dataset
 
-    with open(f"bar-dataset.yaml", 'r') as f:
+    with open(f"blue-dataset.yaml", 'r') as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
 
 
@@ -106,7 +106,7 @@ def train():
 
     # Train the model
     results = model.train(
-        data='yolo_dataset/data.yaml',  # path to data.yaml
+        data='yolo_dataset_blue/data.yaml',  # path to data.yaml
         epochs=10,                      # number of epochs
         imgsz=1136,                       # image size
         batch=16,                         # batch size
@@ -232,7 +232,7 @@ def main():
     # model_path = 'runs/detect/train/weights/best.pt'  # Your trained model
     # # model_path = 'KataCR/runs/detector1_v0.7.13.pt'  # Your trained model
     # # image_path = 'KataCR/logs/generation/gen_97.jpg'
-    # image_path = 'yolo_dataset/train/images/gen_10.jpg'
+    # image_path = 'yolo_dataset_blue/train/images/gen_10.jpg'
     # # image_path = 'screenshot/IMG_0836.PNG'
     # with open(f"blue-dataset.yaml", 'r') as f:
     #     data = yaml.load(f, Loader=yaml.FullLoader)

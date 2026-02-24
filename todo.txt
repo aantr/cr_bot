@@ -1,4 +1,9 @@
-some shit about project
+plan: 
+yolo_bar.py - детекция вражеских баров с уровнями (только место)
+classificator - детект типа под баром с уровнем
+yolo_blue.py датасет с < 20 классами из колоды хог 2.6
+get_cards_state.py - получить какие 4 карты находятся снизу под полем боя (классификатор)
+
 
 KataCr для генерации датасета
 download_cards
@@ -21,3 +26,4 @@ yolo.py
 dataset format 
 train
 run
+
