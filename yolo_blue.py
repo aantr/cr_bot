@@ -119,7 +119,7 @@ def train():
         exist_ok=True,                      # overwrite existing experiment
         pretrained=True,                    # use pretrained model
         optimizer='auto',                    # optimizer
-        verbose=True,                        # print verbose output
+        verbose=True,                       # print verbose output
     )
 
     # Evaluate the model
@@ -230,28 +230,18 @@ def test():
 
 def main():
     # model_path = 'runs/detect/train/weights/best.pt'  # Your trained model
-    # # model_path = 'KataCR/runs/detector1_v0.7.13.pt'  # Your trained model
-    # # image_path = 'KataCR/logs/generation/gen_97.jpg'
-    # image_path = 'yolo_dataset_blue/train/images/gen_10.jpg'
-    # # image_path = 'screenshot/IMG_0836.PNG'
-    # with open(f"blue-dataset.yaml", 'r') as f:
-    #     data = yaml.load(f, Loader=yaml.FullLoader)
+    model_path = 'KataCR/runs/detector1_v0.7.13.pt'  # Your trained model
+    # image_path = 'KataCR/logs/generation/gen_97.jpg'
+    image_path = 'yolo_dataset_blue/train/images/gen_10.jpg'
+    # image_path = 'screenshot/IMG_0836.PNG'
+    with open(f"blue-dataset.yaml", 'r') as f:
+        data = yaml.load(f, Loader=yaml.FullLoader)
 
-    # class_names = data['names']  # Your class names
-    # class_names = [str(i) for i in range(1000)]  # Your class names
+    class_names = data['names']  # Your class names
+    class_names = [str(i) for i in range(1000)]  # Your class names
 
-    # result_img = visualize_yolo_detection(model_path, image_path, class_names, confidence_threshold=0.008)
+    result_img = visualize_yolo_detection(model_path, image_path, class_names, confidence_threshold=0.008)
 
-    # Посмотрите метрики обучения
-    # import matplotlib.pyplot as plt
-    # import pandas as pd
-
-    # # Загрузите логи обучения
-    # df = pd.read_csv('runs/detect/train/results.csv')
-    # plt.plot(df['metrics/mAP50(B)'])
-    # plt.title('mAP50 during training')
-    # plt.show()
-    
     dataset_copy()
     # train()
 

@@ -17,8 +17,14 @@ root = Path(__file__).parents[2]
 path_logs = root / "logs"
 path_logs.mkdir(exist_ok=True)
 path_features = root / "katacr/features"
+
 # path_yaml = root / "katacr/yolov8/ClashRoyale_detection.yaml"
 path_yaml = root / "../blue-dataset.yaml"
+# path_yaml = root / "../bar-dataset.yaml"
+
+# for generator.py - what generate ?
+what_gen = ['blue', 'bars'][0] # blue, bars
+
 # path_videos = Path("/home/yy/Coding/datasets/CR/fast_pig_2.6")
 # path_dataset = Path("/home/wty/Coding/datasets/CR")
 path_dataset = Path("KataCR/Clash-Royale-Detection-Dataset")

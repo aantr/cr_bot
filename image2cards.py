@@ -7,17 +7,7 @@ crop_coords = {
     (1206, 2622): (251, 2622 - 512, 1206 - 35, 2622) # my iphone 16 pro
 }
 
-def get_image_cards_format(image):
-    """
-    Преобразование изображения: обрезка и изменение размера для YOLO формата
-    
-    Args:
-        image: входное изображение (numpy array или путь к файлу)
-    
-    Returns:
-        преобразованное изображение numpy array
-    """
-    
+def get_image_cards_format(image):    
     # Загрузка изображения если передан путь
     if isinstance(image, str):
         img = cv2.imread(image)

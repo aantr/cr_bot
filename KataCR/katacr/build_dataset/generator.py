@@ -9,7 +9,7 @@ from katacr.utils.detection import plot_cells_PIL, plot_box_PIL, build_label2col
 from typing import Tuple, List, Sequence
 import numpy as np
 from katacr.build_dataset.utils.datapath_manager import PathManager
-from katacr.build_dataset.constant import path_logs, path_yaml
+from katacr.build_dataset.constant import path_logs, path_yaml, what_gen
 from katacr.constants.label_list import unit2idx, idx2unit
 from katacr.constants.state_list import state2idx, idx2state
 from katacr.build_dataset.generation_config import (
@@ -50,6 +50,8 @@ from katacr.build_dataset.generation_config import (
 )
 import random, glob
 from katacr.build_dataset.annotation_builder import YOLOAnnotationGenerator
+
+
 
 # background_size = (568, 896), cell_size = (30.9, 25)
 cell_size = np.array(
@@ -636,13 +638,12 @@ class Generator:
             # write in .txt about object
             write_this_box = True
 
-            gen_blue = True
 
-            if u.cls_name in ['bar', 'bar-level'] and u.states[0] == 0:
+            if what_gen == 'bars' and u.cls_name in ['bar', 'bar-level'] and u.states[0] == 0:
                 # print(u.cls, u.xyxy, u.cls_name, u.states)
                 write_this_box = False
                 pass
-            if gen_blue and u.cls_name and u.states[0] == 1:
+            if what_gen == 'blue' and u.cls_name and u.states[0] == 1:
                 # print(u.cls, u.xyxy, u.cls_name, u.states)
                 write_this_box = False
                 pass

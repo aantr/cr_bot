@@ -124,8 +124,8 @@ def visualize_yolo_labels(images_dir, labels_dir, class_names=None, output_dir=N
     cv2.destroyAllWindows()
 
 # Usage example
-images_dir = 'yolo_dataset/train/images'
-labels_dir = 'yolo_dataset/train/labels'
+images_dir = 'yolo_dataset_blue/train/images'
+labels_dir = 'yolo_dataset_blue/train/labels'
 
 visualize_yolo_labels(images_dir, labels_dir)
 
