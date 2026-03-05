@@ -1,0 +1,5 @@
+path: .
+train: train.txt
+names:
+  0: bar
+  1: bar-level

@@ -95,12 +95,7 @@ def visualize_yolo_labels(images_dir, labels_dir, class_names=None, output_dir=N
                             cv2.rectangle(img, (x1, y1-20), (x1+len(class_name)*10, y1), color, -1)
                             cv2.putText(img, class_name, (x1, y1-5), 
                                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
-                        
-                        # Add confidence if available (for detection results)
-                        if len(parts) > 5:
-                            confidence = float(parts[5])
-                            cv2.putText(img, f'{confidence:.2f}', (x1, y2+15),
-                                      cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
+            
                             
                     except ValueError as e:
                         print(f"Error parsing line in {label_path}: {line}")
@@ -116,7 +111,7 @@ def visualize_yolo_labels(images_dir, labels_dir, class_names=None, output_dir=N
             cv2.imshow('YOLO Labels Visualization', img)
             print(f"Showing: {img_path.name}")
             print("Press any key to continue, 'q' to quit...")
-            
+
             key = cv2.waitKey(0) & 0xFF
             if key == ord('q'):
                 break
@@ -124,8 +119,10 @@ def visualize_yolo_labels(images_dir, labels_dir, class_names=None, output_dir=N
     cv2.destroyAllWindows()
 
 # Usage example
-images_dir = 'yolo_dataset_blue/train/images'
-labels_dir = 'yolo_dataset_blue/train/labels'
+images_dir = 'test_yolo_dataset/images/train'
+labels_dir = 'test_yolo_dataset/labels/train'
+# images_dir = 'yolo_dataset_bars/train/images'
+# labels_dir = 'yolo_dataset_bars/train/labels'
 
 visualize_yolo_labels(images_dir, labels_dir)
 
