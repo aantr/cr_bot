@@ -82,7 +82,7 @@ def test_part3():
     cv2.waitKey(0)
 
 def test_val():
-  from train import DatasetBuilder, path_dataset_root
+  from train_bar import DatasetBuilder, path_dataset_root
   ds_builder = DatasetBuilder(str(path_dataset_root / "images/elixir_classification"), 0)
   train_cfg = TrainConfig(batch_size=1)
   val_ds = ds_builder.get_dataloader(train_cfg, mode='val')

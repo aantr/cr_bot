@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82959af397e948706490851ecdffc4c6dd679d750a5d489b828a47b25b7c32eb
-size 299
+opencv-python
+numpy
+pillow
+pyyaml
+tqdm
+matplotlib
+jax
+ultralytics
+scikit-learn

@@ -1,4 +1,4 @@
-from train import DatasetBuilder, path_dataset_root, TrainConfig
+from train_bar import DatasetBuilder, path_dataset_root, TrainConfig
 import cv2
 
 if __name__ == '__main__':

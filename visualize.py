@@ -108,7 +108,12 @@ def visualize_yolo_labels(images_dir, labels_dir, class_names=None, output_dir=N
             print(f"Saved: {output_path}")
         else:
             # Display image
-            cv2.imshow('YOLO Labels Visualization', img)
+            height, width = img.shape[:2]
+            resized = cv2.resize(img, (width // 2, height // 2), 
+                                interpolation=cv2.INTER_AREA)
+
+            cv2.imshow('High Quality Resize', resized)
+
             print(f"Showing: {img_path.name}")
             print("Press any key to continue, 'q' to quit...")
 
@@ -119,10 +124,10 @@ def visualize_yolo_labels(images_dir, labels_dir, class_names=None, output_dir=N
     cv2.destroyAllWindows()
 
 # Usage example
-images_dir = 'test_yolo_dataset/images/train'
-labels_dir = 'test_yolo_dataset/labels/train'
-# images_dir = 'yolo_dataset_bars/train/images'
-# labels_dir = 'yolo_dataset_bars/train/labels'
+# images_dir = 'test_yolo_dataset/images/train'
+# labels_dir = 'test_yolo_dataset/labels/train'
+images_dir = 'yolo_dataset_blue/train/images'
+labels_dir = 'yolo_dataset_blue/train/labels'
 
 visualize_yolo_labels(images_dir, labels_dir)
 

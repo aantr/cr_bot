@@ -1,6 +1,6 @@
 import math
 from ultralytics import YOLO
-from train import YOLO_CR
+from train_bar import YOLO_CR
 from predict import ImageAndVideoLoader
 from pathlib import Path
 from katacr.utils import Stopwatch, second2str

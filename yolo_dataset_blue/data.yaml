@@ -15,6 +15,6 @@ names:
   13: musketeer-hero
   14: ice-golem-hero
 nc: 15
-path: /Users/sasha/cr_bot/yolo_dataset_blue
+path: /home/aleksandr/cr_bot/yolo_dataset_blue
 train: train/images
 val: val/images

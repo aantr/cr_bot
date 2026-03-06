@@ -190,7 +190,10 @@ def visualize_yolo_detection(model_path, image_path, class_names=None, confidenc
                                   cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
     
     # Display result
-    cv2.imshow('YOLO Detection Results', img)
+    height, width = img.shape[:2]
+    resized = cv2.resize(img, (width // 2, height // 2), 
+                        interpolation=cv2.INTER_AREA)
+    cv2.imshow('YOLO Labels Visualization', resized)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     
@@ -229,18 +232,18 @@ def test():
         cv2.imwrite('result.png', im_array)
 
 def main():
-    # model_path = 'runs/detect/train/weights/best.pt'  # Your trained model
-    model_path = 'KataCR/runs/detector1_v0.7.13.pt'  # Your trained model
-    # image_path = 'KataCR/logs/generation/gen_97.jpg'
-    image_path = 'yolo_dataset_blue/train/images/gen_10.jpg'
-    # image_path = 'screenshot/IMG_0836.PNG'
-    with open(f"blue-dataset.yaml", 'r') as f:
-        data = yaml.load(f, Loader=yaml.FullLoader)
+    # # model_path = 'runs/detect/train/weights/best.pt'  # Your trained model
+    # model_path = 'KataCR/runs/detector1_v0.7.13.pt'  # Your trained model
+    # # image_path = 'KataCR/logs/generation/gen_97.jpg'
+    # image_path = 'yolo_dataset_blue/train/images/gen_10.jpg'
+    # # image_path = 'screenshot/IMG_0836.PNG'
+    # with open(f"blue-dataset.yaml", 'r') as f:
+    #     data = yaml.load(f, Loader=yaml.FullLoader)
 
-    class_names = data['names']  # Your class names
-    class_names = [str(i) for i in range(1000)]  # Your class names
+    # class_names = data['names']  # Your class names
+    # class_names = [str(i) for i in range(1000)]  # Your class names
 
-    result_img = visualize_yolo_detection(model_path, image_path, class_names, confidence_threshold=0.008)
+    # result_img = visualize_yolo_detection(model_path, image_path, class_names, confidence_threshold=0.008)
 
     dataset_copy()
     # train()

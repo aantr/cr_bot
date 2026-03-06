@@ -92,40 +92,6 @@ def dataset_copy():
     prepare_yolov8_dataset(data_path, output_path)
     create_data_yaml(output_path, class_names)
 
-
-def train():
-    # Check if CUDA is available
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    print(f"Using device: {device}")
-
-    # Load a model
-    model = YOLO('yolov8n.pt')  # Load pretrained model (nano version)
-    # Options: yolov8n.pt (nano), yolov8s.pt (small), yolov8m.pt (medium), 
-    # yolov8l.pt (large), yolov8x.pt (xlarge)
-
-    # Train the model
-    results = model.train(
-        data='yolo_dataset_bars/data.yaml',  # path to data.yaml
-        epochs=10,                      # number of epochs
-        imgsz=1136,                       # image size
-        batch=16,                         # batch size
-        device=device,                    # device to use
-        workers=8,                        # number of worker threads
-        patience=50,                       # early stopping patience
-        save=True,                         # save checkpoints
-        project='cr_bot',         # project name
-        name='yolo_bars',                         # experiment name
-        exist_ok=True,                      # overwrite existing experiment
-        pretrained=True,                    # use pretrained model
-        optimizer='auto',                    # optimizer
-        verbose=True,                        # print verbose output
-    )
-
-    # Evaluate the model
-    metrics = model.val()
-    print(f"mAP50-95: {metrics.box.map:.4f}")
-    print(f"mAP50: {metrics.box.map50:.4f}")
-
 import cv2
 import torch
 from ultralytics import YOLO
@@ -189,7 +155,10 @@ def visualize_yolo_detection(model_path, image_path, class_names=None, confidenc
                                   cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
     
     # Display result
-    cv2.imshow('YOLO Detection Results', img)
+    height, width = img.shape[:2]
+    resized = cv2.resize(img, (width // 2, height // 2), 
+                        interpolation=cv2.INTER_AREA)
+    cv2.imshow('YOLO Labels Visualization', resized)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     
@@ -228,7 +197,7 @@ def test():
         cv2.imwrite('result.png', im_array)
 
 def main():
-    model_path = 'runs/detect/train/weights/best.pt'  # Your trained model
+    model_path = 'runs/detect/cr_bot/train_bars4/weights/best.pt'  # Your trained model
     # model_path = 'KataCR/runs/detector1_v0.7.13.pt'  # Your trained model
     # image_path = 'KataCR/logs/generation/gen_97.jpg'
     image_path = 'yolo_dataset_bars/train/images/gen_10.jpg'
@@ -239,7 +208,7 @@ def main():
     class_names = data['names']  # Your class names
     class_names = [str(i) for i in range(1000)]  # Your class names
 
-    result_img = visualize_yolo_detection(model_path, image_path, class_names, confidence_threshold=0.008)
+    result_img = visualize_yolo_detection(model_path, image_path, class_names, confidence_threshold=0.5)
 
     # Посмотрите метрики обучения
     # import matplotlib.pyplot as plt
@@ -251,8 +220,8 @@ def main():
     # plt.title('mAP50 during training')
     # plt.show()
     
-    # dataset_copy()
-    # train()
+    dataset_copy()
+    train()
 
 if __name__ == '__main__':
     main()
