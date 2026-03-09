@@ -1,4 +1,4 @@
-path: /Users/sasha/cr_bot/KataCR/logs/generation
+path: /Users/aantr/cr_bot/KataCR/logs/generation
 
 train: yolo_annotations.txt
 val: null
