@@ -8,8 +8,8 @@ import numpy as np
 from tqdm import tqdm
 
 # Путь к папке с изображениями
-dataset_folder = 'cards_dataset/images'
-input_image_path = 'examples/example2.png'
+dataset_folder = 'classificator/cards_dataset/images'
+input_image_path = 'classificator/examples/example2.png'
 
 # Преобразования для изображений
 transform = transforms.Compose([

@@ -1,3 +1,4 @@
+import torch
 from ultralytics import YOLO
 import cv2
 from ultralytics import YOLO
@@ -5,6 +6,7 @@ import cv2
 
 # import pandas as pd
 from collections import defaultdict
+from efficient_net_predict import load_trained_model, predict_single_image
 from image2yolo import get_image_yolo_format
 
 ### --------
@@ -48,6 +50,21 @@ from image2yolo import get_image_yolo_format
 model = YOLO("runs/detect/cr_bot/train_bars8/weights/best.pt")
 cap = cv2.VideoCapture("screenshot/rec1.mp4")
 
+classification_model_path = "best_model.pth"
+
+# 
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model_path = 'best_model.pth'  # путь к вашей модели
+
+# Загрузка модели
+classification_model, classification_classes = load_trained_model(classification_model_path, device)
+
+# Предсказание
+# predicted_class = predict_single_image(classification_model, image_path, classification_classes, device)
+
+# end preprocess class. model
+
 # Для сбора статистики по кадрам
 frame_stats = []
 object_history = defaultdict(list)  # история позиций объектов
@@ -88,6 +105,7 @@ while cap.isOpened():
         class_ids = results[0].boxes.cls.int().cpu().tolist()
 
         frame_data["num_objects"] = len(track_ids)
+        cls_text = ""
 
         for i, (box, track_id, conf, class_id) in enumerate(
             zip(boxes, track_ids, confs, class_ids)
@@ -98,18 +116,21 @@ while cap.isOpened():
             center_y = (y1 + y2) / 2
 
             # Ищем совпадающие бары и левелы
-            if class_id == 1 and SIZE_RESCTRICTIONS[0][0] <= x2 - x1 <= SIZE_RESCTRICTIONS[1][0] and \
-                                SIZE_RESCTRICTIONS[0][1] <= y2 - y1 <= SIZE_RESCTRICTIONS[1][1]:
-                
+            if (
+                class_id == 1
+                and SIZE_RESCTRICTIONS[0][0] <= x2 - x1 <= SIZE_RESCTRICTIONS[1][0]
+                and SIZE_RESCTRICTIONS[0][1] <= y2 - y1 <= SIZE_RESCTRICTIONS[1][1]
+            ):
+
                 bars_place[track_id].append((x1, y1, x2, y2))
                 while len(bars_place[track_id]) > LEN_POSES:
                     bars_place[track_id].pop(0)
 
                 if bar_for_level[track_id]:
                     pass
-                rect = (int(x1 - 5), int(y1 - 5)), (
-                    int(x2 + bar_for_level[track_id] + 5),
-                    int(y2 + 5),
+                rect = (int(x1), int(y1)), (
+                    int(x2 + bar_for_level[track_id]),
+                    int(y2),
                 )
                 cv2.rectangle(frame, *rect, (0, 0, 255), 3)
 
@@ -123,6 +144,19 @@ while cap.isOpened():
                     (255, 0, 0),
                     2,
                 )
+
+                blue_rect = frame[
+                    rect[1][1] : rect[1][1] + SIZE_OF_RECT,
+                    max(0, int((rect[0][0] + rect[1][0]) / 2 - SIZE_OF_RECT / 2)) : int(
+                        (rect[0][0] + rect[1][0]) / 2 + SIZE_OF_RECT / 2
+                    ),
+                ]
+
+                cv2.imshow("One of the blue rectangles", blue_rect)
+                predicted_class = predict_single_image(classification_model, 
+                                                       blue_rect, classification_classes, device, verbose=False)
+            
+                cls_text = predicted_class
 
             if class_id == 0:
                 x_left = x1
@@ -166,16 +200,16 @@ while cap.isOpened():
             )
 
             # Визуализация с дополнительной информацией
-            cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
-            label = f"ID:{track_id} {conf:.2f}"
+            # cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
+            label = f"ID:{track_id} {conf:.2f} cls {cls_text}"
             cv2.putText(
                 frame,
                 label,
                 (int(x1), int(y1) - 10),
                 cv2.FONT_HERSHEY_SIMPLEX,
-                0.5,
+                1,
                 (0, 255, 0),
-                2,
+                3,
             )
 
     # Показываем номер кадра

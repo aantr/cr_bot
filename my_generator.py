@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 from pathlib import Path
 from datetime import datetime
+from constants import unit_list
 
 def create_centered_dataset(
     base_path="path/to/folder",
@@ -36,7 +37,7 @@ def create_centered_dataset(
     # Находим все папки с юнитами
     unit_dirs = []
     for item in base_path.iterdir():
-        if item.is_dir() and not item.name.startswith("backgrounds"):
+        if item.is_dir() and item.name in unit_list:
             unit_dirs.append(item)
     
     if not unit_dirs:
