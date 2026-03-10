@@ -143,7 +143,7 @@ def create_centered_dataset(
     print(f"\nГенерация завершена!")
     print(f"Всего изображений: {total_images}")
     print(f"Датасет сохранен в: {output_dir}")
-    
+        
     # Показываем структуру
     print("\nСтруктура датасета:")
     for unit_dir in output_dir.iterdir():
@@ -156,6 +156,6 @@ if __name__ == "__main__":
     create_centered_dataset(
         base_path="KataCR\Clash-Royale-Detection-Dataset\images\segment",  # Замените на ваш путь
         output_dir="dataset_centered",
-        image_size=(64, 64),
+        image_size=(128, 128),
         images_per_unit=100
     )

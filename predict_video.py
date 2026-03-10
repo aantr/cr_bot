@@ -5,7 +5,7 @@ import cv2
 
 # import pandas as pd
 from collections import defaultdict
-
+from image2yolo import get_image_yolo_format
 
 ### --------
 
@@ -56,6 +56,7 @@ bars_place = defaultdict(list)
 bar_for_level = defaultdict(int)
 LEN_POSES = 5
 SIZE_OF_RECT = 128
+SIZE_RESCTRICTIONS = (10, 10), (50, 60)
 
 frame_count = 0
 while cap.isOpened():
@@ -63,8 +64,19 @@ while cap.isOpened():
     if not ret:
         break
 
+    frame = get_image_yolo_format(frame)
+
     # Трекинг на текущем кадре
-    results = model.track(frame, persist=True, conf=0.5)
+    # results = model.track(frame, persist=True, conf=0.5)
+    results = model.track(
+        frame,
+        persist=True,  # maintain track IDs across frames
+        conf=0.3,  # confidence threshold
+        iou=0.5,  # IoU threshold for NMS
+        tracker="bytetrack.yaml",  # tracking configuration
+        project="detection_results",  # Папка для сохранения
+        name="video_tracking",
+    )
 
     # Собираем данные о кадре
     frame_data = {"frame_number": frame_count, "num_objects": 0, "objects": []}
@@ -86,7 +98,9 @@ while cap.isOpened():
             center_y = (y1 + y2) / 2
 
             # Ищем совпадающие бары и левелы
-            if class_id == 1:
+            if class_id == 1 and SIZE_RESCTRICTIONS[0][0] <= x2 - x1 <= SIZE_RESCTRICTIONS[1][0] and \
+                                SIZE_RESCTRICTIONS[0][1] <= y2 - y1 <= SIZE_RESCTRICTIONS[1][1]:
+                
                 bars_place[track_id].append((x1, y1, x2, y2))
                 while len(bars_place[track_id]) > LEN_POSES:
                     bars_place[track_id].pop(0)
@@ -97,15 +111,18 @@ while cap.isOpened():
                     int(x2 + bar_for_level[track_id] + 5),
                     int(y2 + 5),
                 )
-                print(rect)
-                print(((rect[0][0] + rect[1][0]) / 2 - SIZE_OF_RECT / 2, rect[1][1]),
-                              ((rect[0][0] + rect[1][0]) / 2 + SIZE_OF_RECT / 2, rect[1][1] + SIZE_OF_RECT))
                 cv2.rectangle(frame, *rect, (0, 0, 255), 3)
 
-                cv2.rectangle(frame, 
-                              (int((rect[0][0] + rect[1][0]) / 2 - SIZE_OF_RECT / 2), rect[1][1]),
-                              (int((rect[0][0] + rect[1][0]) / 2 + SIZE_OF_RECT / 2), rect[1][1] + SIZE_OF_RECT),
-                              (255, 0, 0), 2)
+                cv2.rectangle(
+                    frame,
+                    (int((rect[0][0] + rect[1][0]) / 2 - SIZE_OF_RECT / 2), rect[1][1]),
+                    (
+                        int((rect[0][0] + rect[1][0]) / 2 + SIZE_OF_RECT / 2),
+                        rect[1][1] + SIZE_OF_RECT,
+                    ),
+                    (255, 0, 0),
+                    2,
+                )
 
             if class_id == 0:
                 x_left = x1
