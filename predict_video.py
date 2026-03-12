@@ -9,51 +9,23 @@ from collections import defaultdict
 from efficient_net_predict import load_trained_model, predict_single_image
 from image2yolo import get_image_yolo_format
 
-### --------
-
-# # Загрузка модели
-# model = YOLO('runs/detect/cr_bot/train_bars8/weights/best.pt')  # или 'yolov8n.pt'
-
-# # Детекция на видео и сохранение результата
-# for name in ['im1.png', 'im2.png', 'im3.png', 'im4.png', 'im5.png', 'rec1.mp4']:
-#     results = model.predict(source='screenshot/' + name,
-#                         conf=0.5,
-#                         show=True,
-#                         save=True,  # Сохранить видео с детекцией
-#                         project='detection_results',  # Папка для сохранения
-#                         name='video_detection')  # Имя эксперимента
-
-# print("Детекция завершена!")
-
-### --------
-
-# from ultralytics import YOLO
-
-# # Load your model
-# model = YOLO("runs/detect/cr_bot/train_bars8/weights/best.pt")  # or your custom model
-
-# # Track objects in a video file
-# results = model.track(
-#     source="screenshot/rec1.mp4",  # video file, webcam, or stream
-#     persist=True,                 # maintain track IDs across frames
-#     conf=0.3,                     # confidence threshold
-#     iou=0.5,                      # IoU threshold for NMS
-#     tracker="bytetrack.yaml",     # tracking configuration
-#     show=True,                     # display the results
-#     save=True,
-#     project='detection_results',  # Папка для сохранения
-#     name='video_tracking'
-# )
-
-### --------
-
 model = YOLO("runs/detect/cr_bot/train_bars8/weights/best.pt")
-cap = cv2.VideoCapture("screenshot/rec1.mp4")
+cap = cv2.VideoCapture("screenshot/rec2.mp4")
+
+fps = int(cap.get(cv2.CAP_PROP_FPS))
+width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+# Настройка записи видео
+
+
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # или 'XVID' для avi
+out = None
+out_filename = 'screenshot/output_video.mp4'
 
 classification_model_path = "best_model.pth"
 
 # 
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model_path = 'best_model.pth'  # путь к вашей модели
 
@@ -152,12 +124,12 @@ while cap.isOpened():
                     ),
                 ]
 
-                cv2.imshow("One of the blue rectangles", blue_rect)
                 predicted_class = predict_single_image(classification_model, 
                                                        blue_rect, classification_classes, device, verbose=False)
             
                 cls_text = predicted_class
-
+            else:
+                cls_text = 'None'
             if class_id == 0:
                 x_left = x1
                 y_left = center_y
@@ -227,7 +199,10 @@ while cap.isOpened():
     new_height = height // 2
     resized_frame = cv2.resize(frame, (new_width, new_height))
     cv2.imshow("Tracking", resized_frame)
-
+    # Внутри цикла, после обработки кадра (перед cv2.imshow)
+    if out is None:
+        out = cv2.VideoWriter(out_filename, fourcc, fps, (width, height))
+    out.write(frame)
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 
@@ -235,6 +210,7 @@ while cap.isOpened():
 
 cap.release()
 cv2.destroyAllWindows()
+out.release()
 
 # Сохраняем статистику
 # df = pd.DataFrame(frame_stats)
