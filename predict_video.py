@@ -7,6 +7,7 @@ import cv2
 # import pandas as pd
 from collections import defaultdict
 from efficient_net_predict import load_trained_model, predict_single_image
+from image2cards import get_image_cards_format
 from image2yolo import get_image_yolo_format
 
 model = YOLO("runs/detect/cr_bot/train_bars8/weights/best.pt")
@@ -19,18 +20,23 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 # Настройка записи видео
 
 
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # или 'XVID' для avi
+fourcc = cv2.VideoWriter_fourcc(*"mp4v")  # или 'XVID' для avi
 out = None
-out_filename = 'screenshot/output_video.mp4'
+out_filename = "screenshot/output_video.mp4"
 
 classification_model_path = "best_model.pth"
+classification_cards_path = "best_model_cards.pth"
 
-# 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model_path = 'best_model.pth'  # путь к вашей модели
+#
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Загрузка модели
-classification_model, classification_classes = load_trained_model(classification_model_path, device)
+classification_model, classification_classes = load_trained_model(
+    classification_model_path, device
+)
+classification_cards, classification_classes_cards = load_trained_model(
+    classification_cards_path, device
+)
 
 # Предсказание
 # predicted_class = predict_single_image(classification_model, image_path, classification_classes, device)
@@ -53,6 +59,7 @@ while cap.isOpened():
     if not ret:
         break
 
+    frame_cards = get_image_cards_format(frame)
     frame = get_image_yolo_format(frame)
 
     # Трекинг на текущем кадре
@@ -124,12 +131,17 @@ while cap.isOpened():
                     ),
                 ]
 
-                predicted_class = predict_single_image(classification_model, 
-                                                       blue_rect, classification_classes, device, verbose=False)
-            
+                predicted_class = predict_single_image(
+                    classification_model,
+                    blue_rect,
+                    classification_classes,
+                    device,
+                    verbose=False,
+                )
+
                 cls_text = predicted_class
             else:
-                cls_text = 'None'
+                cls_text = "None"
             if class_id == 0:
                 x_left = x1
                 y_left = center_y
@@ -184,6 +196,25 @@ while cap.isOpened():
                 3,
             )
 
+    # predict cards in hand
+
+    for idx_card in range(4):
+        height_, width_ = frame_cards.shape[:2]
+        print(type(frame_cards), height_, width_)
+        card = frame_cards[
+            height_ // 10 : height_ // 10 * 9,
+            width_ // 4 * idx_card : width_ // 4 * (idx_card + 1),
+        ]
+        cv2.imshow(f"card {idx_card}", card)
+        predicted_class_card = predict_single_image(
+            classification_cards,
+            card,
+            classification_classes_cards,
+            device,
+            verbose=False,
+        )
+        print(f"card {idx_card} {predicted_class_card}")
+
     # Показываем номер кадра
     cv2.putText(
         frame,
@@ -199,6 +230,8 @@ while cap.isOpened():
     new_height = height // 2
     resized_frame = cv2.resize(frame, (new_width, new_height))
     cv2.imshow("Tracking", resized_frame)
+    cv2.imshow("Cards", frame_cards)
+
     # Внутри цикла, после обработки кадра (перед cv2.imshow)
     if out is None:
         out = cv2.VideoWriter(out_filename, fourcc, fps, (width, height))
@@ -211,7 +244,3 @@ while cap.isOpened():
 cap.release()
 cv2.destroyAllWindows()
 out.release()
-
-# Сохраняем статистику
-# df = pd.DataFrame(frame_stats)
-# df.to_csv('tracking_stats.csv', index=False)

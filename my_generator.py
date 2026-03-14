@@ -154,9 +154,18 @@ def create_centered_dataset(
 
 if __name__ == "__main__":
     # Использование
-    create_centered_dataset(
-        base_path="KataCR\Clash-Royale-Detection-Dataset\images\segment",  # Замените на ваш путь
-        output_dir="dataset_centered",
-        image_size=(128, 128),
-        images_per_unit=100
+    # create_centered_dataset(
+    #     base_path="KataCR\Clash-Royale-Detection-Dataset\images\segment",  # Замените на ваш путь
+    #     output_dir="dataset_centered",
+    #     image_size=(128, 128),
+    #     images_per_unit=100
+    # )
+
+     create_centered_dataset(
+        base_path= "C:\\Users\\aantr\\cr_bot\\cards_dataset\\dataset",  # Замените на ваш путь
+        output_dir="dataset_cards",
+        image_size=(150, 180),
+        images_per_unit=5
     )
+
+    
