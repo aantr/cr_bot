@@ -200,12 +200,10 @@ while cap.isOpened():
 
     for idx_card in range(4):
         height_, width_ = frame_cards.shape[:2]
-        print(type(frame_cards), height_, width_)
         card = frame_cards[
             height_ // 10 : height_ // 10 * 9,
             width_ // 4 * idx_card : width_ // 4 * (idx_card + 1),
         ]
-        cv2.imshow(f"card {idx_card}", card)
         predicted_class_card = predict_single_image(
             classification_cards,
             card,
@@ -213,7 +211,8 @@ while cap.isOpened():
             device,
             verbose=False,
         )
-        print(f"card {idx_card} {predicted_class_card}")
+        print(f"card {idx_card} {predicted_class_card}", end= ' ')
+    print()
 
     # Показываем номер кадра
     cv2.putText(
