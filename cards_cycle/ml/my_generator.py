@@ -3,8 +3,6 @@ import random
 import cv2
 import numpy as np
 from pathlib import Path
-from datetime import datetime
-from constants import unit_list
 
 def create_centered_dataset(
     base_path="path/to/folder",
@@ -163,10 +161,8 @@ if __name__ == "__main__":
     # )
 
      create_centered_dataset(
-        base_path= "C:\\Users\\aantr\\cr_bot\\cards_dataset\\dataset",  # Замените на ваш путь
+        base_path= "cards_dataset\\dataset",  # Замените на ваш путь
         output_dir="dataset_cards",
         image_size=(150, 180),
         images_per_unit=5
     )
-
-    

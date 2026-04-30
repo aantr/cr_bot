@@ -72,6 +72,7 @@ while cap.isOpened():
         tracker="bytetrack.yaml",  # tracking configuration
         project="detection_results",  # Папка для сохранения
         name="video_tracking",
+        verbose=False
     )
 
     # Собираем данные о кадре
