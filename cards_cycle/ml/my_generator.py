@@ -7,17 +7,23 @@ from pathlib import Path
 def create_centered_dataset(
     base_path="path/to/folder",
     output_dir="dataset_centered",
-    image_size=(64, 64),
-    images_per_unit=100
+    image_size=(128, 128),
+    images_per_unit=100,
+    trash_folder="trash_ims",
+    trash_count_range=(1, 5),  # диапазон количества мусорных объектов
+    trash_size_range=(0.3, 0.5)  # размер мусора относительно фона
 ):
     """
-    Создает датасет с юнитами в центре.
+    Создает датасет с юнитами в центре и мусорными объектами на фоне.
     
     Args:
         base_path: путь к папке с фонами и юнитами
         output_dir: директория для сохранения
         image_size: размер выходного изображения (width, height)
         images_per_unit: количество изображений на юнит
+        trash_folder: имя папки с мусорными изображениями
+        trash_count_range: диапазон количества мусорных объектов (min, max)
+        trash_size_range: диапазон размера мусора относительно фона (min, max)
     """
     base_path = Path(base_path)
     output_dir = Path(output_dir)
@@ -32,17 +38,27 @@ def create_centered_dataset(
     if not backgrounds:
         raise ValueError(f"Не найдены фоны в {background_dir}")
     
+    # Загружаем мусорные изображения
+    trash_dir = base_path / trash_folder
+    trash_images = []
+    if trash_dir.exists():
+        for ext in ['*.png', '*.jpg', '*.jpeg', '*.bmp']:
+            trash_images.extend(trash_dir.glob(ext))
+        print(f"Загружено мусорных изображений: {len(trash_images)}")
+    else:
+        print(f"Предупреждение: папка с мусором {trash_dir} не найдена")
+    
     # Находим все папки с юнитами
     unit_dirs = []
     for item in base_path.iterdir():
-        if item.is_dir() and item.name not in ['backgrounds']:
+        if item.is_dir() and item.name not in ['backgrounds', trash_folder]:
             unit_dirs.append(item)
-    print(len(unit_dirs), unit_dirs)
     
     if not unit_dirs:
         raise ValueError("Не найдены папки с юнитами")
     
     print(f"Найдено фонов: {len(backgrounds)}")
+    print(f"Найдено юнитов: {len(unit_dirs)}")
     
     total_images = 0
     
@@ -70,11 +86,7 @@ def create_centered_dataset(
             bg_path = random.choice(backgrounds)
             bg = cv2.imread(str(bg_path))
             
-            # Выбираем случайный юнит
-            unit_path = random.choice(unit_images)
-            unit = cv2.imread(str(unit_path), cv2.IMREAD_UNCHANGED)
-            
-            if bg is None or unit is None:
+            if bg is None:
                 continue
             
             # Получаем область фона 64x64
@@ -96,12 +108,30 @@ def create_centered_dataset(
                                                                 :min(w, target_w)]
                 bg_crop = canvas
             
-            # Центрируем юнит
-            unit_h, unit_w = unit.shape[:2]
-            x_center = (target_w - unit_w) // 2
-            y_center = (target_h - unit_h) // 2
+            
+            # Выбираем случайный юнит
+            unit_path = random.choice(unit_images)
+            unit = cv2.imread(str(unit_path), cv2.IMREAD_UNCHANGED)
+            
+            if unit is None:
+                continue
             
             result = bg_crop.copy()
+            
+            # Центрируем юнит
+            unit_h, unit_w = unit.shape[:2]
+            
+            # Масштабируем юнит, если он слишком большой
+            # max_unit_size = min(target_h, target_w) // 2
+            # if unit_h > max_unit_size or unit_w > max_unit_size:
+            #     scale = min(max_unit_size / unit_h, max_unit_size / unit_w)
+            #     new_h = max(5, int(unit_h * scale))
+            #     new_w = max(5, int(unit_w * scale))
+            #     unit = cv2.resize(unit, (new_w, new_h), interpolation=cv2.INTER_AREA)
+            #     unit_h, unit_w = unit.shape[:2]
+            
+            x_center = (target_w - unit_w) // 2
+            y_center = (target_h - unit_h) // 2
             
             # Вычисляем видимую область
             x1 = max(0, x_center)
@@ -129,6 +159,58 @@ def create_centered_dataset(
                             alpha * unit_rgb[:, :, c]
                 else:
                     result[y1:y2, x1:x2] = unit_part[:, :, :3]
+
+            # РИСУЕМ МУСОРНЫЕ ОБЪЕКТЫ НА ФОНЕ
+            
+            if trash_images:
+                num_trash = random.randint(trash_count_range[0], trash_count_range[1])
+                
+                for _ in range(num_trash):
+                    # Выбираем случайный мусор
+                    trash_path = random.choice(trash_images)
+                    trash = cv2.imread(str(trash_path), cv2.IMREAD_UNCHANGED)
+                    
+                    if trash is None:
+                        continue
+                    
+                    # Масштабируем мусор
+                    trash_h, trash_w = trash.shape[:2]
+                    scale_factor = random.uniform(trash_size_range[0], trash_size_range[1])
+                    new_h = max(5, int(trash_h * scale_factor))
+                    new_w = max(5, int(trash_w * scale_factor))
+                    
+                    if new_h > target_h or new_w > target_w:
+                        continue
+                    
+                    scaled_trash = cv2.resize(trash, (new_w, new_h), interpolation=cv2.INTER_AREA)
+                    
+                    # Случайная позиция (но не в центре, где будет юнит)
+                    center_margin = min(target_h, target_w) // 4
+                    x_pos = random.randint(0, target_w - new_w)
+                    y_pos = random.randint(0, target_h - new_h)
+                    
+                    # Проверяем, не слишком близко к центру
+                    center_x = target_w // 2
+                    center_y = target_h // 2
+                    obj_center_x = x_pos + new_w // 2
+                    obj_center_y = y_pos + new_h // 2
+                    
+                    dist_to_center = np.sqrt((obj_center_x - center_x)**2 + (obj_center_y - center_y)**2)
+                    if dist_to_center < center_margin:
+                        continue  # пропускаем, слишком близко к центру
+                    
+                    # Накладываем мусор с учетом альфа-канала
+                    if scaled_trash.shape[2] == 4:
+                        alpha = scaled_trash[:, :, 3] / 255.0
+                        trash_rgb = scaled_trash[:, :, :3]
+                        
+                        for c in range(3):
+                            result[y_pos:y_pos+new_h, x_pos:x_pos+new_w, c] = \
+                                (1 - alpha) * result[y_pos:y_pos+new_h, x_pos:x_pos+new_w, c] + \
+                                alpha * trash_rgb[:, :, c]
+                    else:
+                        result[y_pos:y_pos+new_h, x_pos:x_pos+new_w] = scaled_trash[:, :, :3]
+            
             
             # Сохраняем
             filename = f"{unit_name}_center_{i:04d}.png"
@@ -164,5 +246,5 @@ if __name__ == "__main__":
         base_path= "cards_dataset\\dataset",  # Замените на ваш путь
         output_dir="dataset_cards",
         image_size=(150, 180),
-        images_per_unit=5
+        images_per_unit=20
     )

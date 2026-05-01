@@ -40,6 +40,23 @@ def get_image_cards_format(image):
     
     return resized_img
 
+def get_card_by_index(image, index):    
+    # Загрузка изображения если передан путь
+    if isinstance(image, str):
+        img = cv2.imread(image)
+        if img is None:
+            raise ValueError(f"Could not load image from {image}")
+    else:
+        img = image.copy()
+
+    # Получение координат обрезки
+    width, height = img.shape[:2][::-1]  # (width, height)
+    
+    # Обрезка изображения
+    cropped_img = img[:, width * index // 8: width * (index + 1) // 8]
+    
+    return cropped_img
+
 # Пример использования:
 if __name__ == "__main__":
     # Путь к изображению задается в переменной
