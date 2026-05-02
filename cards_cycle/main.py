@@ -351,7 +351,7 @@ class CardsCycle:
                         pass
                 for i in range(8):
                     if count[i] >= 2500:
-                        print(predicted)
+                        # print(predicted)
                         print('deck:', self.deck)
                         self.on_card_played(i)
         return result_fps
