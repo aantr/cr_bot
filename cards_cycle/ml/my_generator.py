@@ -10,8 +10,8 @@ def create_centered_dataset(
     image_size=(128, 128),
     images_per_unit=100,
     trash_folder="trash_ims",
-    trash_count_range=(1, 5),  # диапазон количества мусорных объектов
-    trash_size_range=(0.3, 0.5)  # размер мусора относительно фона
+    trash_count_range=(1, 10),  # диапазон количества мусорных объектов
+    trash_size_range=(0.5, 2)  # размер мусора относительно фона
 ):
     """
     Создает датасет с юнитами в центре и мусорными объектами на фоне.
