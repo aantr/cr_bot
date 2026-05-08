@@ -6,6 +6,8 @@ from collections import deque
 import multiprocessing
 import time
 
+from ultralytics import YOLO
+
 from adb_touch import ADBTouchController
 from cv import find_and_draw_pattern
 import cv2
@@ -252,17 +254,30 @@ class CardsCycle:
         self.model_path = 'ml/best_model_cards.pth'  # путь к вашей модели
         self.model, self.classes = load_trained_model(self.model_path, self.device, verbose=False)
 
+        self.model_yolo = YOLO("ml/best.pt")
+
         self.nickname_im = cv2.imread('res/nickname.png')
         self.spectate_im = cv2.imread('res/spectate.png')
 
         self.touch = ADBTouchController()
-        self.in_battle = False
+        self.in_battle = True
 
         self.buffer_size = 5
         self.frame_buffer = deque(maxlen=self.buffer_size)
 
         self.last_time_played = [time.time() for _ in range(8)]
         self.deck = [i for i in range(8)]
+    
+    def predict_image(self, image):
+
+        results = self.model_yolo.predict(image, imgsz=224, verbose = False)
+
+        # Get prediction details
+        result = results[0]
+        top_class = result.probs.top1
+        top_confidence = result.probs.top1conf
+        class_name = result.names[top_class]
+        return class_name
     
     def get_deck_im(self, img_cards):
         height, width = img_cards.shape[:2]
@@ -314,7 +329,10 @@ class CardsCycle:
             cv2.imshow('deck', self.get_deck_im(img_cards))
             
             # predicted = [predict_single_image(self.model, get_card_by_index(img_cards, i), 
-            #                                   self.classes, self.device, verbose=False) for i in range(8)]
+            #                                   self.classes, self.device, verbose=False) for i in range(8)]  # for efficient_net prediction
+
+            predicted = [self.predict_image(get_card_by_index(img_cards, i)) for i in range(8)]  # for yolo prediction
+
             # for i in range(8):
             #     cv2.imwrite(f'test/idx_{i}.png', get_card_by_index(img_cards, i))
 
@@ -351,7 +369,7 @@ class CardsCycle:
                         pass
                 for i in range(8):
                     if count[i] >= 2500:
-                        # print(predicted)
+                        print(predicted)
                         print('deck:', self.deck)
                         self.on_card_played(i)
         return result_fps
@@ -369,7 +387,7 @@ if __name__ == '__main__':
     minicap_process.start()
     
     # Give minicap time to initialize
-    time.sleep(2)
+    time.sleep(3)
     
     # Run display in main process
     try:
