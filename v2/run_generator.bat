@@ -1,0 +1,1 @@
+python portable_generator\generator.py --dataset-root ..\KataCR\Clash-Royale-Detection-Dataset --count 10 --units-min 1 --units-max 1000
